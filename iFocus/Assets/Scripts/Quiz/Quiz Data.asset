@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b1080bb24bb924aa7316ab4b63d998, type: 3}
+  m_Name: Quiz Data
+  m_EditorClassIdentifier: 
+  fileNameQuiz: QuizData
+  quizData:
+  - id: 0
+    question: "\xBFComo se llaman las c\xE9lulas encargadas de liberar insulina?"
+    answerTrue: "C\xE9lulas Beta"
+    answerFalse01: "C\xE9lulas Alfa"
+    answerFalse02: "C\xE9lulas Delta"
+    answerFalse03: "C\xE9lulas Gama"
+  - id: 1
+    question: "\xBFCual de estos, no es un tejido efector principal de la insulna?"
+    answerTrue: Tejido nervioso
+    answerFalse01: "H\xEDgado"
+    answerFalse02: Tejido adiposo
+    answerFalse03: Tejido muscular esqueletico
+  - id: 2
+    question: "\xBFCual es el rol mas importante del ri\xF1on en la regulacion de
+      glucosa?"
+    answerTrue: "Reabsorci\xF3n de glucosa"
+    answerFalse01: "Producci\xF3n de glucosa"
+    answerFalse02: "Reabsorci\xF3n de glucagon"
+    answerFalse03: Produccion de insulina
+  - id: 3
+    question: "\xBFQue organo es responsable del consumo de la glucosa?"
+    answerTrue: "M\xFAsculos"
+    answerFalse01: "Ri\xF1on"
+    answerFalse02: "H\xEDgado"
+    answerFalse03: "Coraz\xF3n"
+  - id: 4
+    question: "\xBFCual de los siguientes procesos es promovido por la insulina en
+      el h\xEDgado?"
+    answerTrue: "Glucog\xE9nesis"
+    answerFalse01: "Glucogen\xF3lisis"
+    answerFalse02: "Gluconeog\xE9nesis"
+    answerFalse03: "Gluc\xF3lisis"
+  - id: 5
+    question: "La deficiencia de insulina est\xE1 asociada con:"
+    answerTrue: "Cetog\xE9nesis aumentada"
+    answerFalse01: "Lip\xF3lisis reducida"
+    answerFalse02: "Gluconeog\xE9nesis reducida"
+    answerFalse03: "Prote\xF3lisis reducida"
+  - id: 6
+    question: "\xBFCu\xE1l de los siguientes no es un efecto beneficioso del ejercicio
+      en personas con diabetes?"
+    answerTrue: Hipoglucemia
+    answerFalse01: "Reducci\xF3n de triglic\xE9ridos"
+    answerFalse02: Aumento de la sensibilidad a la insulina
+    answerFalse03: "Ayudar a controlar la hipertensi\xF3n"
+  - id: 7
+    question: "\xBFCual de los siguientes no es un factor de riesgo en la diabetes
+      tipo 1?"
+    answerTrue: Dieta
+    answerFalse01: "Gen\xE9tico"
+    answerFalse02: Autoinmune
+    answerFalse03: Ambiental
+  - id: 8
+    question: "\xBFQue porcentaje de casos representa la diabetes tipo 2 en adultos?"
+    answerTrue: 90-95%
+    answerFalse01: 55%-60%
+    answerFalse02: 35%-40%
+    answerFalse03: 25-30%
+  - id: 9
+    question: "\xBFCual de los siguientes no es un factor de riesgo en la diabetes
+      tipo 2?"
+    answerTrue: Fumar
+    answerFalse01: Edad avanzada
+    answerFalse02: Obesidad
+    answerFalse03: "Inactividad f\xEDsica"
+  - id: 10
+    question: "\xBFCon cual de las siguientes opciones no esta asociada la prediabetes?"
+    answerTrue: Mayor riesgo de desarrollar diabetes tipo 1
+    answerFalse01: Mayor riesgo de desarrollar diabetes tipo 2
+    answerFalse02: Intolerancia a la glucosa
+    answerFalse03: "Mayor riesgo de enfermedad card\xEDaca"
+  - id: 11
+    question: "La sed excesiva y el volumen de orina muy diluida pueden ser s\xEDntomas
+      de:"
+    answerTrue: "Diabetes ins\xEDpida"
+    answerFalse01: "Infecci\xF3n del tracto urinario"
+    answerFalse02: Gastroenteritis viral
+    answerFalse03: Hipoglucemia

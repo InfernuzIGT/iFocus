@@ -1,0 +1,32 @@
+[
+  {
+    "id": "0",
+    "title": "Intestino",
+    "descriptionShort": "Incremento anticipatorio",
+    "description": "Antes se creía que la concentración sanguínea de glucosa controlaba casi por completo la secreción de insulina. Sin embargo, a medida que se han ido conociendo mejor las funciones metabólicas de esta hormona, se ha comprobado que los aminoácidos de la sangre y otros factores también desempeñan importantes funciones reguladoras de la secreción hormonal.\n\nAlgunas hormonas gastrointestinales importantes, como la gastrina, la secretina, la colecistocinina y el péptido insulinotrópico dependiente de glucosa (que parece el más potente de todos), aumentan la secreción de insulina de forma moderada. \nEstas hormonas son liberadas por el tubo digestivo cuando la persona ingiere una comida. De este modo, inducen un incremento «anticipatorio » de la insulinemia, que prepara la absorción de glucosa y de aminoácidos tras las comidas.\nEstas hormonas gastrointestinales suelen actuar de la misma manera que los aminoácidos e incrementan la sensibilidad de la respuesta insulínica a la hiperglucemia y casi duplican el ritmo de secreción de insulina a medida que la glucosa sanguínea se eleva."
+  },
+  {
+    "id": "1",
+    "title": "Pancreas",
+    "descriptionShort": "Producción de insulina",
+    "description": "Con el aumento de glucosa tras las comidas, se estimula la producción de insulina en el interior del páncreas. \n\nDicho órgano, está conformado en gran medida por células acinares, las cuales cumplen las funciones exocrinas del mismo, sintetizando y secretando enzimas hacia el duodeno, indispensables para la digestión en el intestino. \nY por contraparte, el componente endocrino, el cual está constituido por entre el 1% y 2% del volumen del páncreas humano, agrupandose en conjuntos de células dispersos en todo el órgano llamados Islotes de Langerhans.\nEn un islote se pueden identificar tres tipos de células principales:\n-Las células Alfa, que constituyen entre el 15% y el 20% del tejido pancreático endocrino. Estas en general se localizan en la periferia de los islotes, y son las encargadas de secretar glucagón.\n-Las células Beta, que se encuentran entre un 60% y 70% del tejido pancreático endocrino, localizándose en la porción central, y son las encargadas de la secreción de insulina.\n-Y por último las células Delta, que representan entre un 5% y 10% del tejido pancreático endocrino, y se localizan en la periferia, encargándose de la secreción de somatostatina.\n\nCuando la glucemia es superior al nivel normal, se estimula la liberación de insulina desde las células Beta hacia los capilares sanguíneos cercanos. Este aumento de insulina estimula la síntesis y el almacenamiento de glucógeno, triglicéridos y proteínas, siendo sus principales tejidos efectores el hígado, el tejido adiposo y el músculo esquelético."
+  },
+  {
+    "id": "2",
+    "title": "Músculo esqueletico",
+    "descriptionShort": "Provisión de energía",
+    "description": "Dado el gran incremento de insulina en sangre, su función metabólica principal es aumentar la velocidad de transporte de glucosa en ciertas células para aumentar la provisión de energía. Estas células son las células del músculo estriado y en menor medida los adipocitos.\n\nPara que la insulina inicie sus efectos en las células efectoras, ha de unirse primero y activar una proteína receptora de la membrana. Este receptor activado, y no la insulina, es el que desencadena los efectos posteriores.\n\nPor este mecanismo, la insulina dirige la maquinaria metabòlica intracelular para provocar los efectos deseados sobre el metabolismo de los hidratos de carbono, los lípidos y las proteínas. \nPocos segundos después de la unión de la insulina a sus receptores de membrana, se produce un notable incremento de la captación de glucosa por las membranas de casi el 80% de las células. La glucosa, que se transporta en mayor cantidad a la célula, se fosforila de inmediato y sirve de sustrato para todas las funciones metabólicas habituales de los hidratos de carbono.\n\nOtra función intracelular de la glucosa, es el depósito de glucógeno en el músculo. Si el músculo no se ejercita después de una comida, pero la glucosa se transporta en abundancia a su interior, la mayor parte de ella se depositará como glucógeno muscular y no se empleará como sustrato energético.\nEste glucógeno se aprovechará más tarde para fines energéticos. Se trata de un mecanismo muy útil para los períodos cortos de utilización intensa de energía por el músculo."
+  },
+  {
+    "id": "3",
+    "title": "Hígado",
+    "descriptionShort": "Almacenamiento de glucosa",
+    "description": "Uno de los efectos más importantes de la insulina es el depósito casi inmediato de glucógeno en el hígado a partir de casi toda la glucosa absorbida después de una comida. Más tarde, entre las comidas, cuando ya no se dispone de alimento y la glucemia empieza a descender, la secreción de insulina disminuye con rapidez y el glucógeno hepático se transforma de nuevo en glucosa, que se libera otra vez a la sangre para evitar que la glucemia descienda demasiado.\n\nEl efecto neto de esta acción es el incremento del glucógeno hepático. El glucógeno puede aumentar hasta un total aproximado del 5 al 6% de la masa hepática, lo que equivale a casi 100 g de glucógeno almacenado en todo el hígado.\nDe ordinario, casi el 60% de la glucosa de la dieta se deposita, como se ha indicado, en el hígado y luego se libera."
+  },
+  {
+    "id": "4",
+    "title": "Tejidos Adiposos",
+    "descriptionShort": "Depósito de lípidos",
+    "description": "La insulina ejerce diversos efectos que inducen el depósito de lípidos en el tejido adiposo. En primer lugar, aumenta la utilización de la glucosa por casi todos los tejidos orgánicos y reduce automáticamente la utilización de la grasa, es decir, ahorra lípidos. No obstante, la insulina también fomenta la síntesis de ácidos grasos, en mayor medida cuantos más hidratos de carbono se ingieran, dado que estos no se emplean de inmediato para producir energía y aportan el sustrato para la síntesis de grasas. Gran parte de esta síntesis tiene lugar en los hepatocitos; luego los ácidos grasos son transportados desde el hígado por las lipoproteínas de la sangre a las células adiposas, donde se almacenan."
+  }
+]

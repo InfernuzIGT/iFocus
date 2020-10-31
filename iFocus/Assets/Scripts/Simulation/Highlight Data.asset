@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9244c3f1b24b664c83da8b2fb851233, type: 3}
+  m_Name: Highlight Data
+  m_EditorClassIdentifier: 
+  fileNameHighlight: HighlightData
+  highlightData:
+  - id: 0
+    title: Intestino
+    descriptionShort: Incremento anticipatorio
+    description: "Antes se cre\xEDa que la concentraci\xF3n sangu\xEDnea de glucosa
+      controlaba casi por completo la secreci\xF3n de insulina. Sin embargo, a medida
+      que se han ido conociendo mejor las funciones metab\xF3licas de esta hormona,
+      se ha comprobado que los amino\xE1cidos de la sangre y otros factores tambi\xE9n
+      desempe\xF1an importantes funciones reguladoras de la secreci\xF3n hormonal.\n\nAlgunas
+      hormonas gastrointestinales importantes, como la gastrina, la secretina, la
+      colecistocinina y el p\xE9ptido insulinotr\xF3pico dependiente de glucosa (que
+      parece el m\xE1s potente de todos), aumentan la secreci\xF3n de insulina de
+      forma moderada. \nEstas hormonas son liberadas por el tubo digestivo cuando
+      la persona ingiere una comida. De este modo, inducen un incremento \xABanticipatorio
+      \xBB de la insulinemia, que prepara la absorci\xF3n de glucosa y de amino\xE1cidos
+      tras las comidas.\nEstas hormonas gastrointestinales suelen actuar de la misma
+      manera que los amino\xE1cidos e incrementan la sensibilidad de la respuesta
+      insul\xEDnica a la hiperglucemia y casi duplican el ritmo de secreci\xF3n de
+      insulina a medida que la glucosa sangu\xEDnea se eleva."
+    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    video: {fileID: 0}
+  - id: 1
+    title: Pancreas
+    descriptionShort: "Producci\xF3n de insulina"
+    description: "Con el aumento de glucosa tras las comidas, se estimula la producci\xF3n
+      de insulina en el interior del p\xE1ncreas. \n\nDicho \xF3rgano, est\xE1 conformado
+      en gran medida por c\xE9lulas acinares, las cuales cumplen las funciones exocrinas
+      del mismo, sintetizando y secretando enzimas hacia el duodeno, indispensables
+      para la digesti\xF3n en el intestino. \nY por contraparte, el componente endocrino,
+      el cual est\xE1 constituido por entre el 1% y 2% del volumen del p\xE1ncreas
+      humano, agrupandose en conjuntos de c\xE9lulas dispersos en todo el \xF3rgano
+      llamados Islotes de Langerhans.\nEn un islote se pueden identificar tres tipos
+      de c\xE9lulas principales:\n-Las c\xE9lulas Alfa, que constituyen entre el
+      15% y el 20% del tejido pancre\xE1tico endocrino. Estas en general se localizan
+      en la periferia de los islotes, y son las encargadas de secretar glucag\xF3n.\n-Las
+      c\xE9lulas Beta, que se encuentran entre un 60% y 70% del tejido pancre\xE1tico
+      endocrino, localiz\xE1ndose en la porci\xF3n central, y son las encargadas
+      de la secreci\xF3n de insulina.\n-Y por \xFAltimo las c\xE9lulas Delta, que
+      representan entre un 5% y 10% del tejido pancre\xE1tico endocrino, y se localizan
+      en la periferia, encarg\xE1ndose de la secreci\xF3n de somatostatina.\n\nCuando
+      la glucemia es superior al nivel normal, se estimula la liberaci\xF3n de insulina
+      desde las c\xE9lulas Beta hacia los capilares sangu\xEDneos cercanos. Este
+      aumento de insulina estimula la s\xEDntesis y el almacenamiento de gluc\xF3geno,
+      triglic\xE9ridos y prote\xEDnas, siendo sus principales tejidos efectores el
+      h\xEDgado, el tejido adiposo y el m\xFAsculo esquel\xE9tico."
+    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    video: {fileID: 0}
+  - id: 2
+    title: "M\xFAsculo esqueletico"
+    descriptionShort: "Provisi\xF3n de energ\xEDa"
+    description: "Dado el gran incremento de insulina en sangre, su funci\xF3n metab\xF3lica
+      principal es aumentar la velocidad de transporte de glucosa en ciertas c\xE9lulas
+      para aumentar la provisi\xF3n de energ\xEDa. Estas c\xE9lulas son las c\xE9lulas
+      del m\xFAsculo estriado y en menor medida los adipocitos.\n\nPara que la insulina
+      inicie sus efectos en las c\xE9lulas efectoras, ha de unirse primero y activar
+      una prote\xEDna receptora de la membrana. Este receptor activado, y no la insulina,
+      es el que desencadena los efectos posteriores.\n\nPor este mecanismo, la insulina
+      dirige la maquinaria metab\xF2lica intracelular para provocar los efectos deseados
+      sobre el metabolismo de los hidratos de carbono, los l\xEDpidos y las prote\xEDnas.
+      \nPocos segundos despu\xE9s de la uni\xF3n de la insulina a sus receptores
+      de membrana, se produce un notable incremento de la captaci\xF3n de glucosa
+      por las membranas de casi el 80% de las c\xE9lulas. La glucosa, que se transporta
+      en mayor cantidad a la c\xE9lula, se fosforila de inmediato y sirve de sustrato
+      para todas las funciones metab\xF3licas habituales de los hidratos de carbono.\n\nOtra
+      funci\xF3n intracelular de la glucosa, es el dep\xF3sito de gluc\xF3geno en
+      el m\xFAsculo. Si el m\xFAsculo no se ejercita despu\xE9s de una comida, pero
+      la glucosa se transporta en abundancia a su interior, la mayor parte de ella
+      se depositar\xE1 como gluc\xF3geno muscular y no se emplear\xE1 como sustrato
+      energ\xE9tico.\nEste gluc\xF3geno se aprovechar\xE1 m\xE1s tarde para fines
+      energ\xE9ticos. Se trata de un mecanismo muy \xFAtil para los per\xEDodos cortos
+      de utilizaci\xF3n intensa de energ\xEDa por el m\xFAsculo."
+    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    video: {fileID: 0}
+  - id: 3
+    title: "H\xEDgado"
+    descriptionShort: Almacenamiento de glucosa
+    description: "Uno de los efectos m\xE1s importantes de la insulina es el dep\xF3sito
+      casi inmediato de gluc\xF3geno en el h\xEDgado a partir de casi toda la glucosa
+      absorbida despu\xE9s de una comida. M\xE1s tarde, entre las comidas, cuando
+      ya no se dispone de alimento y la glucemia empieza a descender, la secreci\xF3n
+      de insulina disminuye con rapidez y el gluc\xF3geno hep\xE1tico se transforma
+      de nuevo en glucosa, que se libera otra vez a la sangre para evitar que la
+      glucemia descienda demasiado.\n\nEl efecto neto de esta acci\xF3n es el incremento
+      del gluc\xF3geno hep\xE1tico. El gluc\xF3geno puede aumentar hasta un total
+      aproximado del 5 al 6% de la masa hep\xE1tica, lo que equivale a casi 100 g
+      de gluc\xF3geno almacenado en todo el h\xEDgado.\nDe ordinario, casi el 60%
+      de la glucosa de la dieta se deposita, como se ha indicado, en el h\xEDgado
+      y luego se libera."
+    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    video: {fileID: 0}
+  - id: 4
+    title: Tejidos Adiposos
+    descriptionShort: "Dep\xF3sito de l\xEDpidos"
+    description: "La insulina ejerce diversos efectos que inducen el dep\xF3sito
+      de l\xEDpidos en el tejido adiposo. En primer lugar, aumenta la utilizaci\xF3n
+      de la glucosa por casi todos los tejidos org\xE1nicos y reduce autom\xE1ticamente
+      la utilizaci\xF3n de la grasa, es decir, ahorra l\xEDpidos. No obstante, la
+      insulina tambi\xE9n fomenta la s\xEDntesis de \xE1cidos grasos, en mayor medida
+      cuantos m\xE1s hidratos de carbono se ingieran, dado que estos no se emplean
+      de inmediato para producir energ\xEDa y aportan el sustrato para la s\xEDntesis
+      de grasas. Gran parte de esta s\xEDntesis tiene lugar en los hepatocitos; luego
+      los \xE1cidos grasos son transportados desde el h\xEDgado por las lipoprote\xEDnas
+      de la sangre a las c\xE9lulas adiposas, donde se almacenan."
+    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    video: {fileID: 0}
+  - id: 4
+    title: -PATOLOGIAS-
+    descriptionShort: Seleccione las patologias
+    description: '-'
+    videoPreview: {fileID: 0}
+    video: {fileID: 0}
