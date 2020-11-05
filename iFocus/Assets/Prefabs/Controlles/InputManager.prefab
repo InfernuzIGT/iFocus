@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7472861961637201928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7472861961637201932}
+  - component: {fileID: 7472861961637201933}
+  - component: {fileID: 7472861961637201934}
+  - component: {fileID: 7472861961637201935}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7472861961637201932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472861961637201928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7472861961637201933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472861961637201928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08731c137ea82c47b92d14b7063868e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CMCamera: {fileID: 0}
+  type: 7
+  _settings: {fileID: 11400000, guid: 67e0d197acf22124b8af27ce2c3a0c7a, type: 2}
+  _cameraOriginalPosition: {x: 0, y: 0, z: 0}
+  _target: {fileID: 0}
+  _rotationSensibility: 100
+  _cameraZoom: 40
+  _zoomSpeed: 1
+  _targetPositions: []
+--- !u!114 &7472861961637201934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472861961637201928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ca5b2f4cc60f240904ee10f702c8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7472861961637201935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472861961637201928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4e5f8fe24b94f4897cb717005135be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUISelected: 0
+  _raycaster: {fileID: 0}
+  tapTimeThreshold: 0.5
+  minScale: 2
+  maxScale: 5
+  minimumPinchSpeed: 5
+  varianceInDistances: 1
+  deadZone: 5
