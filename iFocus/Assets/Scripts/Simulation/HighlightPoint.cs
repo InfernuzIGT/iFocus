@@ -69,7 +69,7 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
     {
         // Debug.Log($"<color=green><b>[UNSELECTED]</b></color> Highlight Point - ID {id}");
         IsSelected = false;
-        // SimulationManager._control.RestarTimeLine(); // TODO: Review
+        SimulationManager._control.RestarTimeLine();
     }
 
     [ContextMenu("Lock")]
