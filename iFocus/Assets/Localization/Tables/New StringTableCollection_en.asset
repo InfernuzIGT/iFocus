@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 32322195456
-    m_Localized: Hello
+    m_Localized: Glucose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7961699664367616
+    m_Localized: Insulin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7961971342020608
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7971899020513280
+    m_Localized: Start
     m_Metadata:
       m_Items: []
   references:
