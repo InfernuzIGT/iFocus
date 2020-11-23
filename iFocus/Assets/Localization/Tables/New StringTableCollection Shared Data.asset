@@ -16,7 +16,19 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: e0703913124ae6e4783eddc86123c395
   m_Entries:
   - m_Id: 32322195456
-    m_Key: hello
+    m_Key: glucose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7961699664367616
+    m_Key: insuline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7961971342020608
+    m_Key: normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7971899020513280
+    m_Key: start
     m_Metadata:
       m_Items: []
   m_Metadata:

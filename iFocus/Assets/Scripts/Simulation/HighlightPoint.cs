@@ -24,7 +24,7 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private void Awake()
     {
-        _material = GetComponentInChildren<SpriteRenderer>().material;
+        // _material = GetComponentInChildren<SpriteRenderer>().material;
         // _material = GetComponent<MeshRenderer>().material;
         _camera = Camera.main;
     }
@@ -38,11 +38,6 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         ChangeLock(_isLocked);
 
         _material.SetFloat("_Category", (int)category);
-    }
-
-    private void LateUpdate()
-    {
-        transform.LookAt(transform.position + _camera.transform.rotation * Vector3.forward, _camera.transform.rotation * Vector3.up);
     }
 
     public Transform GetTransform()

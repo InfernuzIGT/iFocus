@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CMCamera: {fileID: 0}
   type: 7
-  _settings: {fileID: 11400000, guid: 67e0d197acf22124b8af27ce2c3a0c7a, type: 2}
+  _settings: {fileID: 11400000, guid: 9c4ccd4c26817eb4dba06353df639c61, type: 2}
   _cameraOriginalPosition: {x: 0, y: 0, z: 0}
   _target: {fileID: 0}
   _rotationSensibility: 100
