@@ -8,6 +8,7 @@ public class Animation : MonoBehaviour, IAnimable
     [SerializeField, Range(0f, 5f)] protected float _delay = .5f;
     [SerializeField] protected Ease _ease = Ease.InOutQuad;
 
+
     public virtual void Start()
     {
         SetInteraction(false);
