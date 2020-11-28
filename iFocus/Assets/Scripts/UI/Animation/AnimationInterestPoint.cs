@@ -46,13 +46,13 @@ public class AnimationInterestPoint : Animation
         _graphBtn.onClick.AddListener(() => OpenPanel(true));
         _infoBtn.onClick.AddListener(() => OpenPanel(false));
 
-        _videoPlayer.prepareCompleted += VideoSuccess;
-        _videoPlayer.errorReceived += VideoFail;
+        // _videoPlayer.prepareCompleted += VideoSuccess;
+        // _videoPlayer.errorReceived += VideoFail;
 
         base.Start();
     }
 
-    [ContextMenu("Show")]
+    // [ContextMenu("Show")]
     public override void Show()
     {
         base.Show();
@@ -63,7 +63,7 @@ public class AnimationInterestPoint : Animation
         // TODO Mariano: Animate Panel Information
     }
 
-    [ContextMenu("Hide")]
+    // [ContextMenu("Hide")]
     public override void Hide()
     {
         base.Hide();
