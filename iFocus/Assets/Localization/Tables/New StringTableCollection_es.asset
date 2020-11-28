@@ -34,5 +34,29 @@ MonoBehaviour:
     m_Localized: Iniciar
     m_Metadata:
       m_Items: []
+  - m_Id: 10049261719621632
+    m_Localized: Diabetes I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10049316136521728
+    m_Localized: Diabetes II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10049671301795840
+    m_Localized: "Configuraci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10049693653241856
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10053605764468736
+    m_Localized: Examen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10055553385336832
+    m_Localized: "\tSimulaciones"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
