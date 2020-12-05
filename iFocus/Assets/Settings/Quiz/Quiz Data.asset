@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b1080bb24bb924aa7316ab4b63d998, type: 3}
   m_Name: Quiz Data
   m_EditorClassIdentifier: 
+  _maxQuestions: 5
+  _timeToWait: 3
+  stateNone:
+    text: {r: 0, g: 0, b: 0, a: 1}
+    button: {r: 0.9960785, g: 0.9803922, b: 0.96470594, a: 1}
+  stateCorrect:
+    text: {r: 0, g: 0, b: 0, a: 1}
+    button: {r: 0.48235297, g: 0.87843144, b: 0.52156866, a: 1}
+  stateIncorrect:
+    text: {r: 0, g: 0, b: 0, a: 1}
+    button: {r: 0.93725497, g: 0.38823533, b: 0.39607847, a: 1}
   fileNameQuiz: QuizData
   quizData:
   - id: 0
