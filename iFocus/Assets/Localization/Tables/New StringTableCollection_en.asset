@@ -58,5 +58,21 @@ MonoBehaviour:
     m_Localized: "\tSimulations"
     m_Metadata:
       m_Items: []
+  - m_Id: 12551741745500160
+    m_Localized: Correctas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12551770359042048
+    m_Localized: Incorrectas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12551793805201408
+    m_Localized: Ver respuestas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12551834192154624
+    m_Localized: Reintentar
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
