@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HighlightPointUISet : MonoBehaviour
 {
-    public HighlightPointUI[] _highlightPoints;
+    public ButtonTimeline[] _highlightPoints;
 
     public void ToggleAll(bool visible)
     {

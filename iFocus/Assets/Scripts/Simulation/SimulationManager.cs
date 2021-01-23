@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Events;
 using UnityEditor;
 using UnityEngine;
@@ -39,15 +40,37 @@ public class SimulationManager : MonoBehaviour
 
     private void OnEnable()
     {
+        /*
         EventController.AddListener<ChangeButtonStateEvent>(OnChangeButtonState);
         EventController.AddListener<ResetSimulationEvent>(OnResetSimulation);
+        */
+        EventController.AddListener<StateRunningEvent>(OnStateRunningEvent);
     }
+
+    
 
     private void OnDisable()
     {
+        /*
         EventController.RemoveListener<ChangeButtonStateEvent>(OnChangeButtonState);
         EventController.RemoveListener<ResetSimulationEvent>(OnResetSimulation);
+        */
+
+        EventController.RemoveListener<StateRunningEvent>(OnStateRunningEvent);
+
     }
+
+    #region Event Listeners
+
+    private void OnStateRunningEvent(StateRunningEvent eventData)
+    {
+        StartSimulation();
+    }
+
+
+    #endregion
+
+
 
     #region Acces Functions
 
@@ -81,8 +104,6 @@ public class SimulationManager : MonoBehaviour
         DrawValues();
 
         //_UI.buttonGraphImg.gameObject.SetActive(false);
-
-        _timeLine?.Run();
     }
 
     /// <summary>
@@ -132,7 +153,8 @@ public class SimulationManager : MonoBehaviour
     public void SelectHP(int highlightPointIndex)
     {
         //_UI.buttonGraphImg.gameObject.SetActive(true);
-        _eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Select();
+        //_eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Select();
+        _eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Highlight(true);
     }
 
     /// <summary>

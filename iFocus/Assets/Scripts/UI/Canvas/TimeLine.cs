@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Events;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class TimeLine : MonoBehaviour
     public bool IsPlaying { get { return _isPlaying; } set { _isPlaying = value; } }
     public bool IsEndingModeOn { get { return _modeEnding; } set { _modeEnding = value; } }
 
+    private bool _isAlreadyRunning = false;
 
     [SerializeField] private SettingsSO _settings;
     [SerializeField] private DiabetesTypes _type = DiabetesTypes.Normal;
@@ -33,8 +35,8 @@ public class TimeLine : MonoBehaviour
     [SerializeField] private bool _isPlaying = false;
     [SerializeField] private bool _isPaused = false;
     [SerializeField] private bool _stopOnReachHighlightPoint = true;
-    [SerializeField] private Text _glucoseText;
-    [SerializeField] private Text _insulineText;
+    [SerializeField] private TextMeshProUGUI _glucoseText;
+    [SerializeField] private TextMeshProUGUI _insulineText;
 
     private Vector2[] _glucosePoints;
     private Vector2[] _insulinePoints;
@@ -51,15 +53,56 @@ public class TimeLine : MonoBehaviour
 
     private ModeEndingEvent _modeEndingEvent;
 
+    private void OnEnable()
+    {
+        EventController.AddListener<StateRunningEvent>(OnStateRunningEvent);
+        EventController.AddListener<StatePauseSimpleEvent>(OnStatePauseSimpleEvent);
+    }
+
+    #region Event Handling
+    private void OnStatePauseSimpleEvent(StatePauseSimpleEvent eventData)
+    {
+        Debug.Log("Olis");
+        Pause();
+    }
+
+    private void OnStateRunningEvent(StateRunningEvent eventData)
+    {
+        if (_isAlreadyRunning)
+        {
+            Restart();
+        }
+        else
+        {
+            RunFromTheBeginning();
+            _isAlreadyRunning = true;
+        }
+    }
+    #endregion
+
+    private void OnDisable()
+    {
+        EventController.RemoveListener<StateRunningEvent>(OnStateRunningEvent);
+        EventController.RemoveListener<StatePauseSimpleEvent>(OnStatePauseSimpleEvent);
+    }
+
     private void Awake()
     {
         _modeEndingEvent = new ModeEndingEvent();
 
         _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length - 1);
+
         _canvasGroup = GetComponent<CanvasGroup>();
+        ToggleVisibility(false);
+
     }
 
-    public void Run()
+    #region Event Listeners
+
+
+    #endregion
+
+    public void RunFromTheBeginning()
     {
         IsPlaying = true;
         ToggleVisibility(true);
@@ -69,9 +112,10 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Restart")]
     public void Restart()
     {
+        Debug.Log("Restart");
         StopAllCoroutines();
         IsPlaying = true;
-        _graphButton.SetActive(false);
+        //_graphButton.SetActive(false);
         StartCoroutine(Running(_currentHighlightPointIndex));
     }
 
@@ -123,6 +167,7 @@ public class TimeLine : MonoBehaviour
                 _isPlaying = false;
                 while (!_isPlaying)
                 {
+                    Debug.Log("Esta aca");
                     yield return null;
                 }
             }
@@ -138,7 +183,7 @@ public class TimeLine : MonoBehaviour
             }
 
             yield return new WaitForSecondsRealtime(_stepTime);
-            _imgTimeLineFill.fillAmount = _currentStep / _steps;
+           // _imgTimeLineFill.fillAmount = _currentStep / _steps;
             displayValueIndex += discretice;
 
             if (displayValueIndex <= _glucoseInsulineDisplayValues.Length - 1)
@@ -160,8 +205,8 @@ public class TimeLine : MonoBehaviour
                 {
                     _isPlaying = false;
 
-                   yield return new WaitUntil(() => _isPlaying == true);
-                   SimulationManager._control.MakeCameraZoomOut();
+                    yield return new WaitUntil(() => _isPlaying == true);
+                    SimulationManager._control.MakeCameraZoomOut();
                 }
             }
 
@@ -170,7 +215,7 @@ public class TimeLine : MonoBehaviour
                 yield return null;
             }
         }
-        
+
 
         if (_currentHighlightPointIndex + 1 == _highlightPointSets[(int)_type]._highlightPoints.Length)
         {
@@ -217,6 +262,15 @@ public class TimeLine : MonoBehaviour
             _currentHighlightPointIndex = 0;
         }
     }
+    public void SelectHighlightPoint(int highlightPointIndex)
+    {
+        StopAllCoroutines();
+        IsPlaying = false;
+        _currentHighlightPointIndex = highlightPointIndex;
+        _imgTimeLineFill.fillAmount = (_currentHighlightPointIndex * _stepsToNextHP) / _steps;
+
+        UpdateHighlighPoint();
+    }
 
     public IEnumerator UpdateHighlighPoint()
     {
@@ -232,6 +286,7 @@ public class TimeLine : MonoBehaviour
                 yield return new WaitForSeconds(_settings._waitAfterTransition);
                 yield return SimulationManager._control?.MakeCameraZoomIn();
                 yield return new WaitForSeconds(_settings._waitAfterZoomIn);
+                Debug.Log("Select HP");
                 SimulationManager._control.SelectHP(i);
             }
         }
@@ -249,16 +304,6 @@ public class TimeLine : MonoBehaviour
     {
         _glucoseText.text = glucoseValue;
         _insulineText.text = insulineValue;
-    }
-
-    public void SelectHighlightPoint(int highlightPointIndex)
-    {
-        StopAllCoroutines();
-        IsPlaying = false;
-        _currentHighlightPointIndex = highlightPointIndex;
-        _imgTimeLineFill.fillAmount = (_currentHighlightPointIndex * _stepsToNextHP) / _steps;
-
-        UpdateHighlighPoint();
     }
 
     public void SetDiabetesType(DiabetesTypes newType)

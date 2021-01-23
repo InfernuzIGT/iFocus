@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Events;
 
 public class Main : MonoBehaviour
 {
@@ -19,15 +20,20 @@ public class Main : MonoBehaviour
     [SerializeField] private ButtonFood[] _foodBtn = null;
     [Space]
     [SerializeField] private TextMeshProUGUI _IGValueTxt = null;
-    
-    [Header("Animation")]
-    [SerializeField] private Animation _animationFoodSelection = null;
-    
+
+    [Header("Other")]
+    [SerializeField] private ButtonMaster _animationButtonMaster = null;
+
+    private StateRunningEvent _stateRunningEvent;
+
 
     private int _IGValue;
 
     private void Start()
     {
+        _stateRunningEvent = new StateRunningEvent();
+        _stateRunningEvent.igValue = _IGValue;
+
         // Side Bar
         _menuBtn.onClick.AddListener(() => OpenSideMenu(true));
 
@@ -36,7 +42,9 @@ public class Main : MonoBehaviour
 
         for (int i = 0; i < _foodBtn.Length; i++)
         {
-            _foodBtn[i].AddListener(() => SetIG(_foodBtn[i].IGValue));
+            int index = i;
+
+            _foodBtn[i].AddListener(() => SetIG(_foodBtn[index].IGValue));
         }
     }
 
@@ -59,9 +67,11 @@ public class Main : MonoBehaviour
 
     private void StartSimulation()
     {
-        Debug.Log($"<b> START! </b>");
+        _animationButtonMaster.Hide();
+        EventController.TriggerEvent(_stateRunningEvent);
+        Debug.Log($"<b> START with {_IGValue} IG </b>", gameObject);
     }
-    
-   
+
+
 
 }

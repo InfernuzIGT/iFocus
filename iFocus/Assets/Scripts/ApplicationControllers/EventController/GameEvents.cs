@@ -48,7 +48,10 @@ namespace Events
     /// <summary>
     /// Executed after received food. The simulation is currently running. From this point, it can goes to Events: PauseSimple, PauseHP and Stop.
     /// </summary>
-    public class StateRunningEvent : StateEvent { }
+    public class StateRunningEvent : StateEvent
+    {
+        public int igValue;
+    }
 
     /// <summary>
     /// Trigger when the simulation needs stop completly it's current state.

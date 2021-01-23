@@ -52,6 +52,26 @@ public class AnimationInterestPoint : Animation
         base.Start();
     }
 
+    private void OnEnable()
+    {
+        EventController.AddListener<HightlightDataEvent>(OnHighlightData);
+        EventController.AddListener<StateRunningEvent>(OnStateRunningEvent);
+    }
+
+    #region Event Handling
+
+    private void OnStateRunningEvent(StateRunningEvent eventData)
+    {
+        Hide();
+    }
+
+    #endregion
+    private void OnDisable()
+    {
+        EventController.RemoveListener<HightlightDataEvent>(OnHighlightData);
+        EventController.RemoveListener<StateRunningEvent>(OnStateRunningEvent);
+    }
+
     // [ContextMenu("Show")]
     public override void Show()
     {
@@ -136,13 +156,15 @@ public class AnimationInterestPoint : Animation
 
     #region TODO Mariano : Review
 
-    private void OnHighlightData()
+    private void OnHighlightData(HightlightDataEvent evt)
     {
-        if (_videoPlayer.clip != null)
-        {
-            // _videoPlayer.clip = _currentHighlightData.video;
-            _videoPlayer.Prepare();
-        }
+        //if (_videoPlayer.clip != null)
+        //{
+        //    // _videoPlayer.clip = _currentHighlightData.video;
+        //    _videoPlayer.Prepare();
+        //}
+
+        Show();
     }
 
     private void VideoSuccess(VideoPlayer source)

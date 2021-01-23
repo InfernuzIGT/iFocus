@@ -146,11 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84bf95a2c70b284e87ee941ad653574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 9c4ccd4c26817eb4dba06353df639c61, type: 2}
+  _settings: {fileID: 11400000, guid: 67e0d197acf22124b8af27ce2c3a0c7a, type: 2}
   _type: 0
   _imgTimeLineFill: {fileID: 0}
   _graphButton: {fileID: 0}
-  _highlightPointSets: []
+  _highlightPointSets:
+  - {fileID: 4780235054465561023}
+  - {fileID: 593376135990567021}
   _currentHighlightPointIndex: 0
   _steps: 120
   _stepTime: 0.01
@@ -411,6 +413,18 @@ CanvasGroup:
     type: 3}
   m_PrefabInstance: {fileID: 75079465352772740}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4780235054465561023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4853879931610664251, guid: ed4b6399bb939c5489758a7cd360b6a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 75079465352772740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1af5a425529f2a4daf575bb6c2969bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8687380846700334631 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8756539989948117667, guid: ed4b6399bb939c5489758a7cd360b6a9,
@@ -1044,3 +1058,15 @@ CanvasGroup:
     type: 3}
   m_PrefabInstance: {fileID: 1508180720931492305}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &593376135990567021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2076786234333573564, guid: 4126e683c9868834fa73e985f047efb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1508180720931492305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1af5a425529f2a4daf575bb6c2969bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
