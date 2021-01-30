@@ -53,6 +53,8 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     public void Highlight(bool enable)
     {
+        Debug.Log("Highlight");
+
         _isLocked = !enable;
 
         if (_isLocked)

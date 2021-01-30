@@ -70,7 +70,8 @@ public class TimeLine : MonoBehaviour
     {
         if (_isAlreadyRunning)
         {
-            Restart();
+            //Restart();
+            OnEndHighlightPointDataDisplay();
         }
         else
         {
@@ -109,6 +110,9 @@ public class TimeLine : MonoBehaviour
         StartCoroutine(Running(0));
     }
 
+    /// <summary>
+    /// Use this to restart the timeline if the stop of the simulation was made by a forced HP selection.
+    /// </summary>
     [ContextMenu("Restart")]
     public void Restart()
     {
@@ -122,6 +126,7 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Stop")]
     public void Stop()
     {
+        Debug.Log("Stop");
         StopAllCoroutines();
         IsPlaying = false;
         _currentHighlightPointIndex = 0;
@@ -130,6 +135,7 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Pause")]
     public void Pause()
     {
+        Debug.Log("Pause");
         _isPaused = true;
     }
 
@@ -139,10 +145,16 @@ public class TimeLine : MonoBehaviour
         _isPaused = false;
     }
 
+    /// <summary>
+    /// Use this event to restart the simulation afeter a HP selection.
+    /// </summary>
     public void OnEndHighlightPointDataDisplay()
     {
         IsPlaying = true;
-        _graphButton.SetActive(false);
+        
+        //TODO: Bueno, hay quever como va a hacer marian para mostrar este graph, supongo que con el sistema de eventos 
+        // va a ser mas que suficiente.
+        //_graphButton.SetActive(false);
     }
 
     private IEnumerator Running()
@@ -274,6 +286,7 @@ public class TimeLine : MonoBehaviour
 
     public IEnumerator UpdateHighlighPoint()
     {
+        Debug.Log("UpdateHighlightPoint");
         for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
         {
             if (i != _currentHighlightPointIndex)

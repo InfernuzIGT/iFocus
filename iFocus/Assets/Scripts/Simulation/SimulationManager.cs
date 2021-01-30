@@ -40,10 +40,6 @@ public class SimulationManager : MonoBehaviour
 
     private void OnEnable()
     {
-        /*
-        EventController.AddListener<ChangeButtonStateEvent>(OnChangeButtonState);
-        EventController.AddListener<ResetSimulationEvent>(OnResetSimulation);
-        */
         EventController.AddListener<StateRunningEvent>(OnStateRunningEvent);
     }
 
@@ -51,13 +47,7 @@ public class SimulationManager : MonoBehaviour
 
     private void OnDisable()
     {
-        /*
-        EventController.RemoveListener<ChangeButtonStateEvent>(OnChangeButtonState);
-        EventController.RemoveListener<ResetSimulationEvent>(OnResetSimulation);
-        */
-
         EventController.RemoveListener<StateRunningEvent>(OnStateRunningEvent);
-
     }
 
     #region Event Listeners
@@ -87,6 +77,7 @@ public class SimulationManager : MonoBehaviour
 
     public void RestarTimeLine()
     {
+        Debug.Log("RestartTimeline");
         _timeLine.OnEndHighlightPointDataDisplay();
     }
 
@@ -142,18 +133,11 @@ public class SimulationManager : MonoBehaviour
 
     private IEnumerator Transition(int highlightPointIndex)
     {
-        //_UI.buttonPlay.gameObject.SetActive(false);
-
         yield return _cameraController.PositionAndRorationTransition(_eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].transform.position);
-
-        //_UI.buttonGraphImg.gameObject.SetActive(true);
-        //_eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Select();
     }
 
     public void SelectHP(int highlightPointIndex)
     {
-        //_UI.buttonGraphImg.gameObject.SetActive(true);
-        //_eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Select();
         _eulerFunction.GetCurrentSimulation().highlightPoints[highlightPointIndex].Highlight(true);
     }
 
