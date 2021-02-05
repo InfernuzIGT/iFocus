@@ -25,6 +25,7 @@ public class Main : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] private ButtonMaster _animationButtonMaster = null;
+    [SerializeField] private AnimationSideScreen _animationSideScreen = null;
 
     private StateRunningEvent _stateRunningEvent;
 
@@ -55,7 +56,15 @@ public class Main : MonoBehaviour
 
     private void OpenSideMenu(bool open)
     {
-        Debug.Log($"<b> OPEN SIDE MENU: {open} </b>");
+        if (open)
+        {
+            _animationSideScreen.SetFirstButton();
+            _animationSideScreen.Show();
+        }
+        else
+        {
+            _animationSideScreen.Hide();
+        }
     }
 
     public void UpdateValues(float glucoseValue, float insulinValue)
@@ -74,7 +83,6 @@ public class Main : MonoBehaviour
     {
         _animationButtonMaster.Hide();
         EventController.TriggerEvent(_stateRunningEvent);
-        Debug.Log($"<b> START with {_IGValue} IG </b>", gameObject);
     }
 
 }

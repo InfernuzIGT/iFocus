@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using DG.Tweening;
-using Events;
-using TMPro;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +12,10 @@ public class AnimationSideScreen : Animation
     [SerializeField] private Button _quizBtn = null;
     [SerializeField] private Button _configurationBtn = null;
     [SerializeField] private Button _creditsBtn = null;
+    [SerializeField] private Button _backBtn = null;
+
+    [Header("Other")]
+    [SerializeField] private AnimationQuiz _animationQuiz = null;
 
     private CanvasGroup _canvasGroup;
 
@@ -23,8 +23,10 @@ public class AnimationSideScreen : Animation
     {
         _canvasGroup = GetComponent<CanvasGroup>();
 
-        // TODO Mariano: Add listeners
-        // _quizBtn.onClick.AddListener(() => OpenVideo(true));
+        _quizBtn.onClick.AddListener(OpenQuiz);
+        _configurationBtn.onClick.AddListener(OpenConfiguration);
+        _creditsBtn.onClick.AddListener(OpenCredits);
+        _backBtn.onClick.AddListener(Hide);
 
         base.Start();
     }
@@ -50,6 +52,29 @@ public class AnimationSideScreen : Animation
     public override void SetInteraction(bool interactuable)
     {
         _canvasGroup.interactable = interactuable;
+        _canvasGroup.blocksRaycasts = interactuable;
+    }
+
+    public void SetFirstButton()
+    {
+        _simulationBtn[0].Select();
+    }
+
+    private void OpenQuiz()
+    {
+        Hide();
+        _animationQuiz.LaunchQuiz(true);
+        _animationQuiz.Show();
+    }
+
+    private void OpenConfiguration()
+    {
+        Debug.Log($"Open: Configuration");
+    }
+
+    private void OpenCredits()
+    {
+        Debug.Log($"Open: Credits");
     }
 
 }

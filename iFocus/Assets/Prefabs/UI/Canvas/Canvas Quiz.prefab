@@ -2749,6 +2749,7 @@ GameObject:
   - component: {fileID: 7872366373114342036}
   - component: {fileID: 6544156444820574480}
   - component: {fileID: 2515797623234910961}
+  - component: {fileID: 2122929007402317337}
   m_Layer: 5
   m_Name: Canvas Quiz
   m_TagString: Untagged
@@ -2836,7 +2837,7 @@ MonoBehaviour:
   - {fileID: 7142070141367419823}
   questionTotalTxt: {fileID: 2222426144688610582}
   questionTxt: {fileID: 4374551561117869193}
-  infoTxt: {fileID: 0}
+  buttonBack: {fileID: 2074903607403236251}
   answers:
   - {fileID: 8941201914380670930}
   - {fileID: 6873390014349477826}
@@ -2845,6 +2846,23 @@ MonoBehaviour:
   progressTxt: {fileID: 2937983073963713183}
   questionCorrectTxt: {fileID: 3602161909440728021}
   questionIncorrectTxt: {fileID: 5550360450374776281}
+--- !u!114 &2122929007402317337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296488827739582921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &7519479489097443866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,12 +3244,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ace0b418370b184899de903a0e49f3b, type: 3}
---- !u!224 &4453256879779451154 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2873544483827266027, guid: 2ace0b418370b184899de903a0e49f3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1886380362869711097}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1859203134267241519 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 279490996013995222, guid: 2ace0b418370b184899de903a0e49f3b,
@@ -3244,6 +3256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a78c861293746a44be8d0dd41deb67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4453256879779451154 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2873544483827266027, guid: 2ace0b418370b184899de903a0e49f3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1886380362869711097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6666414149847814932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3647,12 +3665,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ace0b418370b184899de903a0e49f3b, type: 3}
---- !u!224 &6347143261767398127 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2873544483827266027, guid: 2ace0b418370b184899de903a0e49f3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 9220403702226371332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8941201914380670930 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 279490996013995222, guid: 2ace0b418370b184899de903a0e49f3b,
@@ -3665,3 +3677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a78c861293746a44be8d0dd41deb67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6347143261767398127 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2873544483827266027, guid: 2ace0b418370b184899de903a0e49f3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9220403702226371332}
+  m_PrefabAsset: {fileID: 0}
