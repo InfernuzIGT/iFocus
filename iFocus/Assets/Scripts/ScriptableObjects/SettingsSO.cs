@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Settings Asset", menuName = "ScriptableObjects/Settings", order = 2)]
 public class SettingsSO : ScriptableObject
 {
+    [Header("Simulation Settings")]
+    public int defaultIGValue;
+    public int[] foodIGValues;
+
     [Header("Camera Settings")]
     [SerializeField] public float _waitAfterTransition = 0f;
     [SerializeField] public float _transitionSpeed = 1f;

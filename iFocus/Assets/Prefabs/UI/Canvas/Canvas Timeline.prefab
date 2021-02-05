@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 6267902729145579695}
   - component: {fileID: 5583974691829100279}
   - component: {fileID: 688782861125407603}
+  - component: {fileID: 2853859474061625965}
   m_Layer: 5
   m_Name: Canvas Timeline
   m_TagString: Untagged
@@ -162,6 +163,23 @@ MonoBehaviour:
   _stopOnReachHighlightPoint: 1
   _glucoseText: {fileID: 0}
   _insulineText: {fileID: 0}
+--- !u!114 &2853859474061625965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545558567918911237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &75079465352772740
 PrefabInstance:
   m_ObjectHideFlags: 0

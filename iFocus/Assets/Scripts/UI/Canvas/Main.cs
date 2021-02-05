@@ -1,10 +1,12 @@
-﻿using TMPro;
+﻿using Events;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Events;
 
 public class Main : MonoBehaviour
 {
+    [SerializeField] private SettingsSO _settings;
+
     [Header("Main")]
     [SerializeField] private TextMeshProUGUI _titleTxt = null;
     [Space]
@@ -26,7 +28,6 @@ public class Main : MonoBehaviour
 
     private StateRunningEvent _stateRunningEvent;
 
-
     private int _IGValue;
 
     private void Start()
@@ -44,8 +45,12 @@ public class Main : MonoBehaviour
         {
             int index = i;
 
-            _foodBtn[i].AddListener(() => SetIG(_foodBtn[index].IGValue));
+            _foodBtn[i].AddListener(() => SetIG(_settings.foodIGValues[index]));
+            // _foodBtn[i].AddListener(() => SetIG(_foodBtn[index].IGValue));
         }
+
+        _IGValue = _settings.defaultIGValue;
+        _IGValueTxt.text = _IGValue.ToString();
     }
 
     private void OpenSideMenu(bool open)
@@ -71,7 +76,5 @@ public class Main : MonoBehaviour
         EventController.TriggerEvent(_stateRunningEvent);
         Debug.Log($"<b> START with {_IGValue} IG </b>", gameObject);
     }
-
-
 
 }
