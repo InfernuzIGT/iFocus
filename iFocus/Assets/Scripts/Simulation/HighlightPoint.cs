@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class HighlightPoint : MonoBehaviour, IRaySelectable
 {
-    public HighlightCategory category; // TODO Mariano: REMOVE
-    [Space]
-
+    [Header("Highlight Point")]
     [SerializeField] private int id = 0;
     [SerializeField] private bool _isSelected = false;
-    [SerializeField] private bool _isLocked;
-    [Space]
-    [SerializeField] private Transform cameraTransform = null; // TODO: Remover y reemplazar por variables en Data
+    [SerializeField] private bool _isLocked = true;
 
     private GameObject _cameraTransform;
     private HightlightDataEvent _hightlightDataEvent;
@@ -41,20 +37,10 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         _statePauseHPEvent = new StatePauseHPEvent();
 
         ChangeLock(_isLocked);
-
-        //_material.SetFloat("_Category", (int)category);
-    }
-
-    public Transform GetTransform()
-    {
-        // return _cameraTransform;
-        return cameraTransform;
     }
 
     public void Highlight(bool enable)
     {
-        Debug.Log("Highlight");
-
         _isLocked = !enable;
 
         if (_isLocked)
@@ -72,7 +58,7 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private void OnMouseDown()
     {
-        if (_isSelected || _isLocked) return;
+        if (_isSelected || _isLocked)return;
 
         Select();
     }
@@ -84,7 +70,6 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         _material.SetFloat(hash_IsSelected, 1);
 
         //TODO: cambiar estado de boton Master
-
 
         EventController.TriggerEvent(_hightlightDataEvent);
 

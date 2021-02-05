@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class CanvasGroupUtility : MonoBehaviour
 {
     [Header("General")]
-    [SerializeField, Range(0,5)] private float fadeDuration = 1;
+    [SerializeField, Range(0, 5)] private float fadeDuration = 1;
     [Space]
     [SerializeField] private UnityEvent OnShowStart = null;
     [SerializeField] private UnityEvent OnShowFinish = null;
@@ -44,6 +44,23 @@ public class CanvasGroupUtility : MonoBehaviour
 
             SetProperties(false);
         }
+    }
+
+    public void ShowInstant(bool isShowing)
+    {
+        _isShowing = isShowing;
+
+        if (_isShowing)
+        {
+            _canvasGroup.alpha = 1;
+            CallFinishEvent(true);
+        }
+        else
+        {
+            _canvasGroup.alpha = 0;
+        }
+
+        SetProperties(isShowing);
     }
 
     public void Toggle()
