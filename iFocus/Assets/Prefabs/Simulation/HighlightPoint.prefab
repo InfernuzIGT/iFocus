@@ -89,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128036441218333835}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -109,5 +109,5 @@ MonoBehaviour:
   category: 0
   id: 0
   _isSelected: 0
-  _isLocked: 0
+  _isLocked: 1
   cameraTransform: {fileID: 0}

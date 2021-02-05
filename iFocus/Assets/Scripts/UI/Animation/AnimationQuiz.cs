@@ -41,6 +41,8 @@ public class AnimationQuiz : Animation
 
     public override void Start()
     {
+        _canvasGroup = GetComponent<CanvasGroup>();
+
         base.Start();
 
         _waitForSeconds = new WaitForSeconds(_data.TimeToWait);

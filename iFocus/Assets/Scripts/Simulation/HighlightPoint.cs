@@ -14,7 +14,11 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private GameObject _cameraTransform;
     private HightlightDataEvent _hightlightDataEvent;
+    private StatePauseHPEvent _statePauseHPEvent;
     private Material _material;
+
+    private int hash_IsHighlited = Shader.PropertyToID("_isHighlited");
+    private int hash_IsSelected = Shader.PropertyToID("_isSelected");
 
     // Properties
     public bool IsSelected { get { return _isSelected; } set { _isSelected = value; } }
@@ -24,8 +28,7 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private void Awake()
     {
-        // _material = GetComponentInChildren<SpriteRenderer>().material;
-        // _material = GetComponent<MeshRenderer>().material;
+        _material = GetComponent<MeshRenderer>().material;
         _camera = Camera.main;
     }
 
@@ -35,9 +38,11 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         _hightlightDataEvent.id = id;
         _hightlightDataEvent.action = Unselect;
 
+        _statePauseHPEvent = new StatePauseHPEvent();
+
         ChangeLock(_isLocked);
 
-        _material.SetFloat("_Category", (int)category);
+        //_material.SetFloat("_Category", (int)category);
     }
 
     public Transform GetTransform()
@@ -46,23 +51,55 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         return cameraTransform;
     }
 
+    public void Highlight(bool enable)
+    {
+        Debug.Log("Highlight");
+
+        _isLocked = !enable;
+
+        if (_isLocked)
+        {
+            _material.SetFloat(hash_IsHighlited, 0);
+        }
+        else
+        {
+            _material.SetFloat(hash_IsHighlited, 1);
+
+            EventController.TriggerEvent(_statePauseHPEvent);
+        }
+
+    }
+
+    private void OnMouseDown()
+    {
+        if (_isSelected || _isLocked) return;
+
+        Select();
+    }
+
     [ContextMenu("Select")]
     public void Select()
     {
-        // Debug.Log ($"SELECT");
-        if (!_isLocked)
-        {
-            // Debug.Log($"<color=green><b>[SELECTED]</b></color> Highlight Point - ID {id}");
+        IsSelected = true;
+        _material.SetFloat(hash_IsSelected, 1);
 
-            IsSelected = true;
+        //TODO: cambiar estado de boton Master
 
-            EventController.TriggerEvent(_hightlightDataEvent);
-        }
+
+        EventController.TriggerEvent(_hightlightDataEvent);
+
+        //if (!_isLocked)
+        //{
+        //    IsSelected = true;
+
+        //    EventController.TriggerEvent(_hightlightDataEvent);
+        //}
     }
 
     public void Unselect()
     {
         // Debug.Log($"<color=green><b>[UNSELECTED]</b></color> Highlight Point - ID {id}");
+        _material.SetFloat(hash_IsSelected, 0);
         IsSelected = false;
         SimulationManager._control.RestarTimeLine();
     }
@@ -83,6 +120,6 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
     {
         _isLocked = isLocked;
 
-        // _material.SetFloat("_isLocked", _isLocked ? 1 : 0);
+        //_material.SetFloat("_isLocked", _isLocked ? 1 : 0);
     }
 }
