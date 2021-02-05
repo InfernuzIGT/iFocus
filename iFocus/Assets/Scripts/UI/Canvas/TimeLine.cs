@@ -46,8 +46,7 @@ public class TimeLine : MonoBehaviour
     private float _stepsToNextHP = 0;
     private float _stepCounter = 0;
 
-    private CanvasGroup _canvasGroup;
-    private bool _showCanvas;
+    private CanvasGroupUtility _canvasUtility;
 
     private bool _modeEnding;
 
@@ -62,7 +61,6 @@ public class TimeLine : MonoBehaviour
     #region Event Handling
     private void OnStatePauseSimpleEvent(StatePauseSimpleEvent eventData)
     {
-        Debug.Log("Olis");
         Pause();
     }
 
@@ -93,13 +91,11 @@ public class TimeLine : MonoBehaviour
 
         _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length - 1);
 
-        _canvasGroup = GetComponent<CanvasGroup>();
-        ToggleVisibility(false);
-
+        _canvasUtility = GetComponent<CanvasGroupUtility>();
+        _canvasUtility.ShowInstant(false);
     }
 
     #region Event Listeners
-
 
     #endregion
 
@@ -151,7 +147,7 @@ public class TimeLine : MonoBehaviour
     public void OnEndHighlightPointDataDisplay()
     {
         IsPlaying = true;
-        
+
         //TODO: Bueno, hay quever como va a hacer marian para mostrar este graph, supongo que con el sistema de eventos 
         // va a ser mas que suficiente.
         //_graphButton.SetActive(false);
@@ -164,6 +160,14 @@ public class TimeLine : MonoBehaviour
 
     private IEnumerator Running(int startingHighlightPointIndex)
     {
+        if (startingHighlightPointIndex == 0)
+        {
+            for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
+            {
+                _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = false;
+            }
+        }
+
         int displayValueIndex = 0;
 
         _stepCounter = 0;
@@ -179,7 +183,6 @@ public class TimeLine : MonoBehaviour
                 _isPlaying = false;
                 while (!_isPlaying)
                 {
-                    Debug.Log("Esta aca");
                     yield return null;
                 }
             }
@@ -195,7 +198,7 @@ public class TimeLine : MonoBehaviour
             }
 
             yield return new WaitForSecondsRealtime(_stepTime);
-           // _imgTimeLineFill.fillAmount = _currentStep / _steps;
+            // _imgTimeLineFill.fillAmount = _currentStep / _steps;
             displayValueIndex += discretice;
 
             if (displayValueIndex <= _glucoseInsulineDisplayValues.Length - 1)
@@ -227,7 +230,6 @@ public class TimeLine : MonoBehaviour
                 yield return null;
             }
         }
-
 
         if (_currentHighlightPointIndex + 1 == _highlightPointSets[(int)_type]._highlightPoints.Length)
         {
@@ -286,20 +288,19 @@ public class TimeLine : MonoBehaviour
 
     public IEnumerator UpdateHighlighPoint()
     {
-        Debug.Log("UpdateHighlightPoint");
         for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
         {
             if (i != _currentHighlightPointIndex)
                 _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = false;
             else
             {
-                _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = true;
+                // _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = true;
                 yield return new WaitForSeconds(_settings._waitBeforeTransition);
                 yield return SimulationManager._control?.MakeTransition(i);
                 yield return new WaitForSeconds(_settings._waitAfterTransition);
                 yield return SimulationManager._control?.MakeCameraZoomIn();
                 yield return new WaitForSeconds(_settings._waitAfterZoomIn);
-                Debug.Log("Select HP");
+                _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = true;
                 SimulationManager._control.SelectHP(i);
             }
         }
@@ -347,22 +348,9 @@ public class TimeLine : MonoBehaviour
 
     }
 
-    public void ToggleVisibility()
-    {
-        _showCanvas = !_showCanvas;
-
-        _canvasGroup.alpha = _showCanvas ? 1 : 0;
-        _canvasGroup.interactable = _showCanvas;
-        _canvasGroup.blocksRaycasts = _showCanvas;
-    }
-
     public void ToggleVisibility(bool visible)
     {
-        _showCanvas = visible;
-
-        _canvasGroup.alpha = _showCanvas ? 1 : 0;
-        _canvasGroup.interactable = _showCanvas;
-        _canvasGroup.blocksRaycasts = _showCanvas;
+        _canvasUtility.ShowInstant(visible);
     }
 
     public void ToggleModeEnding()

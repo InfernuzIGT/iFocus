@@ -1,12 +1,16 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using Events;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonTimeline : MonoBehaviour
 {
     [Header("Button Timeline")]
+    [SerializeField] private int id = 0;
     [SerializeField] private bool _isSelected = false;
     [SerializeField] private bool _isLocked = true;
+
+    private HightlightDataEvent _hightlightDataEvent;
+    private StatePauseHPEvent _statePauseHPEvent;
 
     private Button _button;
     private CanvasGroup _canvasGroup;
@@ -25,7 +29,7 @@ public class ButtonTimeline : MonoBehaviour
             _canvasGroup.interactable = _isSelected;
         }
     }
-    
+
     public bool IsLocked { get { return _isLocked; } set { _isLocked = value; } }
 
     private void Awake()
@@ -34,9 +38,21 @@ public class ButtonTimeline : MonoBehaviour
         _canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void AddListener(UnityAction action)
+    private void Start()
     {
-        _button.onClick.AddListener(action);
+        _hightlightDataEvent = new HightlightDataEvent();
+        _hightlightDataEvent.id = id;
+
+        _statePauseHPEvent = new StatePauseHPEvent();
+        
+        _button.onClick.AddListener(Select);
+    }
+
+    private void Select()
+    {
+        IsSelected = true;
+
+        EventController.TriggerEvent(_hightlightDataEvent);
     }
 
 }

@@ -5,10 +5,10 @@ using DG.Tweening;
 using Events;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimationQuiz : Animation
 {
-
     [Header("Quiz")]
     [SerializeField] private QuizDataSO _data = null;
     [Space]
@@ -17,7 +17,7 @@ public class AnimationQuiz : Animation
     [Space]
     [SerializeField] private TextMeshProUGUI questionTotalTxt = null;
     [SerializeField] private TextMeshProUGUI questionTxt = null;
-    [SerializeField] private TextMeshProUGUI infoTxt = null;
+    [SerializeField] private Button buttonBack = null;
     [SerializeField] private List<AnswerButton> answers = null;
     [Space]
     [SerializeField] private TextMeshProUGUI progressTxt = null;
@@ -52,6 +52,8 @@ public class AnimationQuiz : Animation
         _tempQuizData = new List<QuizData>();
 
         _quizData = _data.GetQuizData();
+        
+        buttonBack.onClick.AddListener(Hide);
     }
 
     private void OnEnable()
@@ -68,7 +70,7 @@ public class AnimationQuiz : Animation
     {
         base.Show();
 
-        _canvasGroup.DOFade(0, _duration);
+        _canvasGroup.DOFade(1, _duration);
 
     }
 
@@ -76,12 +78,13 @@ public class AnimationQuiz : Animation
     {
         base.Hide();
 
-        _canvasGroup.DOFade(1, _duration);
+        _canvasGroup.DOFade(0, _duration);
     }
 
     public override void SetInteraction(bool interactuable)
     {
-        _canvasGroup.interactable = !interactuable;
+        _canvasGroup.interactable = interactuable;
+        _canvasGroup.blocksRaycasts = interactuable;
     }
 
     private void Switch(bool quizVisible)

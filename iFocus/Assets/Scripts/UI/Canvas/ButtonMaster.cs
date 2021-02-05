@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
 using Events;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class ButtonMaster : MonoBehaviour
 {
@@ -38,6 +38,10 @@ public class ButtonMaster : MonoBehaviour
         _image.sprite = _data.GetIcon(_currentState);
 
         _button.onClick.AddListener(Execute);
+        
+        // TODO Mariano: Add actions to buttons
+        // _skipBtn.onClick.AddListener(Execute);
+        // _resetBtn.onClick.AddListener(Execute);
     }
 
     private void OnEnable()
@@ -53,8 +57,6 @@ public class ButtonMaster : MonoBehaviour
         EventController.AddListener<StateGraphEvent>(OnStateGraphEvent);
         EventController.AddListener<HightlightDataEvent>(OnHighlightData);
     }
-
-
 
     #region Event Handling
 
@@ -80,24 +82,19 @@ public class ButtonMaster : MonoBehaviour
     }
 
     private void OnStateStopEvent(StateStopEvent eventData)
-    {
-    }
+    { }
 
     private void OnStateSelectedHPEvent(StateSelectHPEvent eventData)
-    {
-    }
+    { }
 
     private void OnStateInfoEvent(StateInfoEvent eventData)
-    {
-    }
+    { }
 
     private void OnStateFullScreenEvent(StateFullScreenEvent eventData)
-    {
-    }
+    { }
 
     private void OnStateGraphEvent(StateGraphEvent eventData)
-    {
-    }
+    { }
     private void OnHighlightData(HightlightDataEvent evt)
     {
         ChangeState(BUTTONMASTER_STATE.Cancel);
@@ -118,10 +115,6 @@ public class ButtonMaster : MonoBehaviour
         EventController.RemoveListener<StateGraphEvent>(OnStateGraphEvent);
         EventController.RemoveListener<HightlightDataEvent>(OnHighlightData);
     }
-
-    
-
- 
 
     public void ChangeState(BUTTONMASTER_STATE newState)
     {

@@ -1,10 +1,12 @@
-﻿using TMPro;
+﻿using Events;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Events;
 
 public class Main : MonoBehaviour
 {
+    [SerializeField] private SettingsSO _settings;
+
     [Header("Main")]
     [SerializeField] private TextMeshProUGUI _titleTxt = null;
     [Space]
@@ -23,9 +25,9 @@ public class Main : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] private ButtonMaster _animationButtonMaster = null;
+    [SerializeField] private AnimationSideScreen _animationSideScreen = null;
 
     private StateRunningEvent _stateRunningEvent;
-
 
     private int _IGValue;
 
@@ -44,13 +46,25 @@ public class Main : MonoBehaviour
         {
             int index = i;
 
-            _foodBtn[i].AddListener(() => SetIG(_foodBtn[index].IGValue));
+            _foodBtn[i].AddListener(() => SetIG(_settings.foodIGValues[index]));
+            // _foodBtn[i].AddListener(() => SetIG(_foodBtn[index].IGValue));
         }
+
+        _IGValue = _settings.defaultIGValue;
+        _IGValueTxt.text = _IGValue.ToString();
     }
 
     private void OpenSideMenu(bool open)
     {
-        Debug.Log($"<b> OPEN SIDE MENU: {open} </b>");
+        if (open)
+        {
+            _animationSideScreen.SetFirstButton();
+            _animationSideScreen.Show();
+        }
+        else
+        {
+            _animationSideScreen.Hide();
+        }
     }
 
     public void UpdateValues(float glucoseValue, float insulinValue)
@@ -69,9 +83,6 @@ public class Main : MonoBehaviour
     {
         _animationButtonMaster.Hide();
         EventController.TriggerEvent(_stateRunningEvent);
-        Debug.Log($"<b> START with {_IGValue} IG </b>", gameObject);
     }
-
-
 
 }

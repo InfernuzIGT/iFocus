@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca957bfff90d81c479463df48389355e, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
+  defaultIGValue: 5
+  foodIGValues: 020000000400000006000000080000000a0000000c000000
   _waitAfterTransition: 0
   _transitionSpeed: 1
   _defaultZoomValue: 40

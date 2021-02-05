@@ -751,6 +751,8 @@ MonoBehaviour:
   _delay: 0.5
   _ease: 7
   _panelInformation: {fileID: 4018952348939699474}
+  _videoImg: {fileID: 0}
+  _Img: {fileID: 0}
   _containerButtons: {fileID: 1468630198018546826}
   _buttonBack: {fileID: 3324007962857139154}
   _titleTxt: {fileID: 3493889569678490170}
@@ -864,7 +866,7 @@ GameObject:
   - component: {fileID: 6059284316337813384}
   - component: {fileID: 4753453176550095888}
   m_Layer: 5
-  m_Name: BacnImg
+  m_Name: BackImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,7 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
