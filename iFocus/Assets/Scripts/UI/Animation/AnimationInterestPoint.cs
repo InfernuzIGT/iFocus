@@ -97,6 +97,7 @@ public class AnimationInterestPoint : Animation
     public override void SetInteraction(bool interactuable)
     {
         _canvasGroup.interactable = interactuable;
+        _canvasGroup.blocksRaycasts = interactuable;
     }
 
     private void OpenVideo(bool isOpening)

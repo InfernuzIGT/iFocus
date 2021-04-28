@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 3607203811954202809}
   - component: {fileID: 6286905280987866259}
   - component: {fileID: 8795919397583690395}
+  - component: {fileID: 6851645934039674494}
   m_Layer: 5
   m_Name: Canvas InterestPoint
   m_TagString: Untagged
@@ -780,6 +781,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6851645934039674494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836906875568459985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5d61131e668f547af55dad01a2667c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  OnShowStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShowFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideFinish:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3966656686255033448
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,6 +45,30 @@ public class CanvasGroupUtility : MonoBehaviour
             SetProperties(false);
         }
     }
+    
+    public void Show(bool isShowing, float duration)
+    {
+        _isShowing = isShowing;
+
+        if (isShowing)
+        {
+            OnShowStart.Invoke();
+
+            _canvasGroup
+                .DOFade(1, duration)
+                .OnComplete(() => SetProperties(true));
+        }
+        else
+        {
+            OnHideStart.Invoke();
+
+            _canvasGroup
+                .DOFade(0, duration)
+                .OnComplete(() => CallFinishEvent(false));
+
+            SetProperties(false);
+        }
+    }
 
     public void ShowInstant(bool isShowing)
     {

@@ -12,8 +12,8 @@ public class AnimationQuiz : Animation
     [Header("Quiz")]
     [SerializeField] private QuizDataSO _data = null;
     [Space]
-    [SerializeField] private CanvasGroup[] _canvasQuiz = null;
-    [SerializeField] private CanvasGroup[] _canvasResult = null;
+    [SerializeField] private CanvasGroupUtility[] _canvasQuiz = null;
+    [SerializeField] private CanvasGroupUtility[] _canvasResult = null;
     [Space]
     [SerializeField] private TextMeshProUGUI questionTotalTxt = null;
     [SerializeField] private TextMeshProUGUI questionTxt = null;
@@ -23,6 +23,7 @@ public class AnimationQuiz : Animation
     [SerializeField] private TextMeshProUGUI progressTxt = null;
     [SerializeField] private TextMeshProUGUI questionCorrectTxt = null;
     [SerializeField] private TextMeshProUGUI questionIncorrectTxt = null;
+    [SerializeField] private Image progressImg = null;
 
     private QuizData[] _quizData;
     private List<QuizData> _tempQuizData;
@@ -52,7 +53,7 @@ public class AnimationQuiz : Animation
         _tempQuizData = new List<QuizData>();
 
         _quizData = _data.GetQuizData();
-        
+
         buttonBack.onClick.AddListener(Hide);
     }
 
@@ -93,16 +94,16 @@ public class AnimationQuiz : Animation
         {
             for (int i = 0; i < _canvasQuiz.Length; i++)
             {
-                _canvasQuiz[i].DOFade(1, _duration);
-                _canvasResult[i].DOFade(0, _duration);
+                _canvasQuiz[i].Show(true, _duration);
+                _canvasResult[i].Show(false, _duration);
             }
         }
         else
         {
             for (int i = 0; i < _canvasQuiz.Length; i++)
             {
-                _canvasQuiz[i].DOFade(0, _duration);
-                _canvasResult[i].DOFade(1, _duration);
+                _canvasQuiz[i].Show(false, _duration);
+                _canvasResult[i].Show(true, _duration);
             }
         }
     }
@@ -122,6 +123,12 @@ public class AnimationQuiz : Animation
         if (_maxQuestions >= _quizData.Length)_maxQuestions = _quizData.Length;
 
         UpdateQuestions();
+    }
+    
+    public void ButtonRetry()
+    {
+        LaunchQuiz(false);
+        Switch(true);
     }
 
     private void UpdateQuestions()
@@ -204,11 +211,15 @@ public class AnimationQuiz : Animation
     private void FinishGame()
     {
         float porcentage = (_counterCorrect * 100) / _maxQuestions;
+        
+        progressImg.fillAmount = 0;
+        progressImg.DOFillAmount(porcentage / 100, 1);
 
-        questionTxt.text = string.Format("{0}%", porcentage);
-        progressTxt.text = "-";
+        // questionTxt.text = string.Format("{0}%", porcentage);
+        // progressTxt.text = "-";
 
-        questionTotalTxt.text = _maxQuestions.ToString();
+        questionTotalTxt.text = string.Format("{0}%", porcentage);
+        // questionTotalTxt.text = _maxQuestions.ToString();
         questionCorrectTxt.text = _counterCorrect.ToString();;
         questionIncorrectTxt.text = _counterIncorrect.ToString();
 
