@@ -16,7 +16,7 @@ MonoBehaviour:
   _timeToWait: 3
   stateNone:
     text: {r: 0, g: 0, b: 0, a: 1}
-    button: {r: 0.9960785, g: 0.9803922, b: 0.96470594, a: 1}
+    button: {r: 1, g: 1, b: 1, a: 1}
   stateCorrect:
     text: {r: 0, g: 0, b: 0, a: 1}
     button: {r: 0.48235297, g: 0.87843144, b: 0.52156866, a: 1}

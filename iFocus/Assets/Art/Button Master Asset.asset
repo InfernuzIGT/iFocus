@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconFood: {fileID: 21300000, guid: 81d6482fee101c44995e490a7605d8a9, type: 3}
   iconPlay: {fileID: 21300000, guid: 76c49d73790cbc545b8d87c0b95d5ca1, type: 3}
-  iconPause: {fileID: 0}
-  iconReset: {fileID: 21300000, guid: 2f0913f9d455fcd4499622d86fa233e1, type: 3}
+  iconPause: {fileID: 21300000, guid: ab9db9519783e934c9fb384e17f6ba34, type: 3}
   iconBack: {fileID: 21300000, guid: 7cb8568b1c090cd47b782608a8fd6d0f, type: 3}
-  iconCancel: {fileID: 0}
+  iconCancel: {fileID: 21300000, guid: 7123dc71f4a6813439f5b1f07ceb9b52, type: 3}
