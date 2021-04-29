@@ -89,7 +89,7 @@ public class TimeLine : MonoBehaviour
     {
         _modeEndingEvent = new ModeEndingEvent();
 
-        _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length - 1);
+        _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length/* - 1*/);
 
         _canvasUtility = GetComponent<CanvasGroupUtility>();
         _canvasUtility.ShowInstant(false);
@@ -190,8 +190,12 @@ public class TimeLine : MonoBehaviour
 
         SimulationManager._control.MakeCameraZoomOut();
 
-        while (IsPlaying && _currentStep < _steps)
+
+        while (IsPlaying && _currentStep < _steps && !_modeEnding)
         {
+            if (_currentHighlightPointIndex + 1 == _highlightPointSets[(int)_type]._highlightPoints.Length)
+                SetEndingMode();
+            
             if (_currentHighlightPointIndex >= _highlightPointSets[(int)_type]._highlightPoints.Length)
             {
                 break;
@@ -230,11 +234,6 @@ public class TimeLine : MonoBehaviour
                 yield return null;
             }
         }
-
-        if (_currentHighlightPointIndex + 1 == _highlightPointSets[(int)_type]._highlightPoints.Length)
-        {
-            SetEndingMode();
-        }
     }
 
     private void SetEndingMode()
@@ -247,17 +246,17 @@ public class TimeLine : MonoBehaviour
         {
             case DiabetesTypes.Normal:
                 _highlightPointSets[(int)_type].ToggleAll(true);
-                _highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = false;
+                //_highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = true;
                 break;
-
             case DiabetesTypes.T1DM:
                 _highlightPointSets[(int)_type].ToggleAll(true);
+               // _highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = false;
                 break;
 
             case DiabetesTypes.T2DM:
                 _highlightPointSets[(int)_type].ToggleAll(true);
+                //_highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = false;
                 break;
-
             default:
                 break;
         }

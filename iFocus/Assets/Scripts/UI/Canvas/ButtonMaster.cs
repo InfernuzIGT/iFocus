@@ -98,7 +98,6 @@ public class ButtonMaster : MonoBehaviour
     private void OnHighlightData(HightlightDataEvent evt)
     {
         ChangeState(BUTTONMASTER_STATE.Cancel);
-        Debug.Log("Setear a cancel");
     }
 
     #endregion

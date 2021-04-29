@@ -169,6 +169,11 @@ PrefabInstance:
       propertyPath: offsetTweak.y
       value: -0.82
       objectReference: {fileID: 0}
+    - target: {fileID: 3964010963622496780, guid: 54ddf30e70b98964aaff5989d04b51b1,
+        type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4012745230766398514, guid: 54ddf30e70b98964aaff5989d04b51b1,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -770,6 +775,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 14828417084581060, guid: 093ba95170c6c4c46a88a091a661a959,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 89777333340383280, guid: 093ba95170c6c4c46a88a091a661a959,
         type: 3}
       propertyPath: m_LocalPosition.x

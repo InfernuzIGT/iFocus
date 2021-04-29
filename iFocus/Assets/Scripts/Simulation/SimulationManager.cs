@@ -36,7 +36,6 @@ public class SimulationManager : MonoBehaviour
     private Coroutine _coroutineRunning;
     private Coroutine _coroutineUpdateUI;
     private Coroutine _coroutineTransition;
-    private SwitchEvent _switchEvent;
 
     private void OnEnable()
     {
@@ -71,7 +70,6 @@ public class SimulationManager : MonoBehaviour
         else
             _control = this;
 
-        _switchEvent = new SwitchEvent();
         _eulerFunction.ToggleSimulationType(false);
     }
 
@@ -225,11 +223,6 @@ public class SimulationManager : MonoBehaviour
                 Debug.Log("Oli: " + foodIndex);
                 break;
         }
-    }
-
-    public void SwitchEvent()
-    {
-        EventController.TriggerEvent(_switchEvent);
     }
 
     public void StoreValuesOnTimeLine()
