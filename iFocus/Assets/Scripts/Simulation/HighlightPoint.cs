@@ -22,6 +22,17 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private Camera _camera;
 
+
+    private void OnEnable()
+    {
+        EventController.AddListener<HightlightDataEvent>(OnHighlightDataEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventController.RemoveListener<HightlightDataEvent>(OnHighlightDataEvent);
+    }
+
     private void Awake()
     {
         _material = GetComponent<MeshRenderer>().material;
@@ -58,7 +69,7 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private void OnMouseDown()
     {
-        if (_isSelected || _isLocked)return;
+        if (_isSelected || _isLocked) return;
 
         Select();
     }
@@ -66,9 +77,10 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
     [ContextMenu("Select")]
     public void Select()
     {
+        /*
         IsSelected = true;
         _material.SetFloat(hash_IsSelected, 1);
-
+        */
         //TODO: cambiar estado de boton Master
 
         EventController.TriggerEvent(_hightlightDataEvent);
@@ -106,5 +118,13 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
         _isLocked = isLocked;
 
         //_material.SetFloat("_isLocked", _isLocked ? 1 : 0);
+    }
+    private void OnHighlightDataEvent(HightlightDataEvent eventHandler)
+    {
+        if (eventHandler.id == id)
+        {
+            IsSelected = true;
+            _material.SetFloat(hash_IsSelected, 1);
+        }
     }
 }
