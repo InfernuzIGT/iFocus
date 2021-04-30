@@ -32,7 +32,7 @@ MonoBehaviour:
       manera que los amino\xE1cidos e incrementan la sensibilidad de la respuesta
       insul\xEDnica a la hiperglucemia y casi duplican el ritmo de secreci\xF3n de
       insulina a medida que la glucosa sangu\xEDnea se eleva."
-    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    videoPreview: {fileID: 0}
     video: {fileID: 0}
   - id: 1
     title: Pancreas
@@ -58,7 +58,7 @@ MonoBehaviour:
       aumento de insulina estimula la s\xEDntesis y el almacenamiento de gluc\xF3geno,
       triglic\xE9ridos y prote\xEDnas, siendo sus principales tejidos efectores el
       h\xEDgado, el tejido adiposo y el m\xFAsculo esquel\xE9tico."
-    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    videoPreview: {fileID: 0}
     video: {fileID: 0}
   - id: 2
     title: "M\xFAsculo esqueletico"
@@ -84,7 +84,7 @@ MonoBehaviour:
       energ\xE9tico.\nEste gluc\xF3geno se aprovechar\xE1 m\xE1s tarde para fines
       energ\xE9ticos. Se trata de un mecanismo muy \xFAtil para los per\xEDodos cortos
       de utilizaci\xF3n intensa de energ\xEDa por el m\xFAsculo."
-    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    videoPreview: {fileID: 0}
     video: {fileID: 0}
   - id: 3
     title: "H\xEDgado"
@@ -101,7 +101,7 @@ MonoBehaviour:
       de gluc\xF3geno almacenado en todo el h\xEDgado.\nDe ordinario, casi el 60%
       de la glucosa de la dieta se deposita, como se ha indicado, en el h\xEDgado
       y luego se libera."
-    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
+    videoPreview: {fileID: 0}
     video: {fileID: 0}
   - id: 4
     title: Tejidos Adiposos
@@ -116,11 +116,5 @@ MonoBehaviour:
       de grasas. Gran parte de esta s\xEDntesis tiene lugar en los hepatocitos; luego
       los \xE1cidos grasos son transportados desde el h\xEDgado por las lipoprote\xEDnas
       de la sangre a las c\xE9lulas adiposas, donde se almacenan."
-    videoPreview: {fileID: 21300000, guid: 4b99c5c0b0570e6438ce84bc8ad9a7ff, type: 3}
-    video: {fileID: 0}
-  - id: 4
-    title: -PATOLOGIAS-
-    descriptionShort: Seleccione las patologias
-    description: '-'
     videoPreview: {fileID: 0}
     video: {fileID: 0}
