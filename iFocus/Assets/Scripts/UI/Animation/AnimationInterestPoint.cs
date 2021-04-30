@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Events;
 using TMPro;
 using UnityEngine;
@@ -10,6 +8,8 @@ using UnityEngine.Video;
 public class AnimationInterestPoint : Animation
 {
     [Header("Interest Point")]
+    [SerializeField] private HighlightDataSO _data = null;
+    [Space]
     [SerializeField] private RectTransform _panelInformation = null;
     [SerializeField] private RawImage _videoImg = null;
     [SerializeField] private RawImage _Img = null;
@@ -21,6 +21,7 @@ public class AnimationInterestPoint : Animation
     [SerializeField] private TextMeshProUGUI _subtitleTxt = null;
     [Space]
     [SerializeField] private TextMeshProUGUI _descriptionTxt = null;
+    [SerializeField] private CanvasGroupUtility _descriptionCanvasGroup = null;
     [SerializeField] private RawImage _graphImg = null;
     [Space]
     [SerializeField] private Button _videoBtn = null;
@@ -30,6 +31,8 @@ public class AnimationInterestPoint : Animation
 
     private CanvasGroup _canvasGroup;
     private VideoPlayer _videoPlayer;
+
+    private HighlightData _highlighData;
 
     private bool _isGraph;
 
@@ -115,7 +118,8 @@ public class AnimationInterestPoint : Animation
         }
         else
         {
-            _descriptionTxt.DOFade(1, _duration);
+            _descriptionCanvasGroup.Show(true, _duration);
+            // _descriptionTxt.DOFade(1, _duration);
         }
 
         _panelInformation.DOSizeDelta(_sizeOpen, _duration);
@@ -139,7 +143,8 @@ public class AnimationInterestPoint : Animation
         }
         else
         {
-            _descriptionTxt.DOFade(0, _duration);
+            _descriptionCanvasGroup.Show(false, _duration);
+            // _descriptionTxt.DOFade(0, _duration);
         }
 
         _panelInformation.DOSizeDelta(_sizeClose, _duration);
@@ -164,6 +169,12 @@ public class AnimationInterestPoint : Animation
         //    // _videoPlayer.clip = _currentHighlightData.video;
         //    _videoPlayer.Prepare();
         //}
+
+        _highlighData = _data.GetHighlightDataById(evt.id);
+
+        _titleTxt.text = _highlighData.title;
+        _subtitleTxt.text = _highlighData.descriptionShort;
+        _descriptionTxt.text = _highlighData.description;
 
         Show();
     }
