@@ -22,7 +22,6 @@ public class HighlightPoint : MonoBehaviour, IRaySelectable
 
     private Camera _camera;
 
-
     private void OnEnable()
     {
         EventController.AddListener<HightlightDataEvent>(OnHighlightDataEvent);

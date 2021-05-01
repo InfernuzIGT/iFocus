@@ -69,6 +69,7 @@ public class TimeLine : MonoBehaviour
         if (_isAlreadyRunning)
         {
             //Restart();
+            _isPaused = false;
             OnEndHighlightPointDataDisplay();
         }
         else
@@ -120,7 +121,6 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Restart")]
     public void Restart()
     {
-        Debug.Log("Restart");
         StopAllCoroutines();
         IsPlaying = true;
         //_graphButton.SetActive(false);
@@ -130,7 +130,6 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Stop")]
     public void Stop()
     {
-        Debug.Log("Stop");
         StopAllCoroutines();
         IsPlaying = false;
         _currentHighlightPointIndex = 0;
@@ -139,7 +138,6 @@ public class TimeLine : MonoBehaviour
     [ContextMenu("Pause")]
     public void Pause()
     {
-        Debug.Log("Pause");
         _isPaused = true;
     }
 

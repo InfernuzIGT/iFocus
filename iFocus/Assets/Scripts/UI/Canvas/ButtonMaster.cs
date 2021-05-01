@@ -36,7 +36,6 @@ public class ButtonMaster : MonoBehaviour
     private void Start()
     {
         _image.sprite = _data.GetIcon(_currentState);
-
         _button.onClick.AddListener(Execute);
         
         // TODO Mariano: Add actions to buttons
@@ -146,7 +145,9 @@ public class ButtonMaster : MonoBehaviour
                 break;
 
             case BUTTONMASTER_STATE.Play:
-                _animationButtonMaster.Show();
+                EventController.TriggerEvent(_stateRunningEvent);
+                ChangeState(BUTTONMASTER_STATE.Pause);
+                //_animationButtonMaster.Show();
                 break;
 
             case BUTTONMASTER_STATE.Pause:
@@ -174,11 +175,14 @@ public class ButtonMaster : MonoBehaviour
                 break;
 
             case BUTTONMASTER_STATE.Play:
-                _animationButtonMaster.Hide();
-                ChangeState(BUTTONMASTER_STATE.Play);
+//                _animationButtonMaster.Hide();
+                EventController.TriggerEvent(_stateRunningEvent);
+                ChangeState(BUTTONMASTER_STATE.Pause);
                 break;
 
             case BUTTONMASTER_STATE.Pause:
+                EventController.TriggerEvent(_statePauseSimpleEvent);
+                ChangeState(BUTTONMASTER_STATE.Play);
                 break;
 
             case BUTTONMASTER_STATE.Back:

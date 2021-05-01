@@ -42,8 +42,6 @@ public class SimulationManager : MonoBehaviour
         EventController.AddListener<StateRunningEvent>(OnStateRunningEvent);
     }
 
-    
-
     private void OnDisable()
     {
         EventController.RemoveListener<StateRunningEvent>(OnStateRunningEvent);
@@ -255,5 +253,4 @@ public class SimulationManager : MonoBehaviour
     {
         StartCoroutine(_cameraController.PinchZoom(90f));
     }
-
 }
