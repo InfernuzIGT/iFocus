@@ -107,6 +107,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5498410845886324541}
     m_Modifications:
+    - target: {fileID: 5892799062247696763, guid: b8eb39929d631ca48989c8f0c6c3eee6,
+        type: 3}
+      propertyPath: _matCurrentOrgan
+      value: 
+      objectReference: {fileID: 2100000, guid: 170566a07d51c3d458fe55598ef692b6, type: 2}
     - target: {fileID: 5938464137996529619, guid: b8eb39929d631ca48989c8f0c6c3eee6,
         type: 3}
       propertyPath: m_Name
@@ -255,6 +260,11 @@ PrefabInstance:
       propertyPath: id
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5892799062247696763, guid: b8eb39929d631ca48989c8f0c6c3eee6,
+        type: 3}
+      propertyPath: _matCurrentOrgan
+      value: 
+      objectReference: {fileID: 2100000, guid: 96aa4b73f0bff3a4daad87ed24411f89, type: 2}
     - target: {fileID: 5938464137996529619, guid: b8eb39929d631ca48989c8f0c6c3eee6,
         type: 3}
       propertyPath: m_Name
@@ -413,6 +423,11 @@ PrefabInstance:
       propertyPath: id
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5892799062247696763, guid: b8eb39929d631ca48989c8f0c6c3eee6,
+        type: 3}
+      propertyPath: _matCurrentOrgan
+      value: 
+      objectReference: {fileID: 2100000, guid: e06006ff23bd56e43a851ffcb546c167, type: 2}
     - target: {fileID: 5938464137996529619, guid: b8eb39929d631ca48989c8f0c6c3eee6,
         type: 3}
       propertyPath: m_Name
@@ -571,6 +586,11 @@ PrefabInstance:
       propertyPath: id
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5892799062247696763, guid: b8eb39929d631ca48989c8f0c6c3eee6,
+        type: 3}
+      propertyPath: _matCurrentOrgan
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e975caf60f8c0e45a1e2f2f37ac143d, type: 2}
     - target: {fileID: 5938464137996529619, guid: b8eb39929d631ca48989c8f0c6c3eee6,
         type: 3}
       propertyPath: m_Name
@@ -952,6 +972,11 @@ PrefabInstance:
       propertyPath: id
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5892799062247696763, guid: b8eb39929d631ca48989c8f0c6c3eee6,
+        type: 3}
+      propertyPath: _matCurrentOrgan
+      value: 
+      objectReference: {fileID: 2100000, guid: df776ced537d41c4682ed07a6afa447d, type: 2}
     - target: {fileID: 5938464137996529619, guid: b8eb39929d631ca48989c8f0c6c3eee6,
         type: 3}
       propertyPath: m_Name
