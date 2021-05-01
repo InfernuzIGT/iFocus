@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve
+  m_Name: Human Body
   m_Shader: {fileID: -6465566751694194690, guid: 366c6203e12112546a11b2df286db1ef,
     type: 3}
   m_ShaderKeywords: 
@@ -37,13 +37,20 @@ Material:
     - Vector1_36A4EEA5: 0
     - Vector1_3985D70B: 1
     - Vector1_5F62C75E: 0
+    - Vector1_7DB803AD: 1
     - Vector1_9948B0CC: 5
+    - Vector1_D129BF27: 0.95
     - Vector1_D152CB08: 0.05
     - Vector1_DB8145C1: 0.5
     - _Dissolve: 0
+    - _Lerp: 0
     m_Colors:
+    - Color_23C5ED84: {r: 0, g: 0.2094241, b: 1, a: 1}
+    - Color_5312458C: {r: 0, g: 0.3137255, b: 1.498039, a: 1}
+    - Color_5A35BAD3: {r: 0, g: 0.3137255, b: 1.498039, a: 1}
     - Color_A6F5DDF5: {r: 0, g: 0.3137255, b: 1.498039, a: 1}
     - Color_B4DDABC1: {r: 0, g: 0.2094241, b: 1, a: 1}
+    - Color_C4D03B85: {r: 0, g: 0.2094241, b: 1, a: 1}
     - Color_D0D8EC7F: {r: 0, g: 1.260117, b: 6.062866, a: 1}
     - Color_D963F941: {r: 0.01375042, g: 0.9716981, b: 0.6347424, a: 1}
     - Color_E1080D25: {r: 0, g: 0.2094241, b: 1, a: 1}

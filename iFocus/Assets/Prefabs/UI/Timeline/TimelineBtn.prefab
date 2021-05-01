@@ -171,9 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990724e0ecf9984a860a716c7114906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectsToActivate: []
+  id: 0
   _isSelected: 0
   _isLocked: 1
+  _imPathology: 0
+  _matBody: {fileID: 2100000, guid: d2c896fc7835a3e41a3cc8a30bad67d1, type: 2}
+  _matCurrentOrgan: {fileID: 0}
 --- !u!222 &742554853370404953
 CanvasRenderer:
   m_ObjectHideFlags: 0

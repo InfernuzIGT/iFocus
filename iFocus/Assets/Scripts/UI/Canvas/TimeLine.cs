@@ -90,10 +90,18 @@ public class TimeLine : MonoBehaviour
     {
         _modeEndingEvent = new ModeEndingEvent();
 
-        _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length/* - 1*/);
+        _stepsToNextHP = _steps / (_highlightPointSets[(int)_type]._highlightPoints.Length /* - 1*/ );
 
         _canvasUtility = GetComponent<CanvasGroupUtility>();
         _canvasUtility.ShowInstant(false);
+
+        for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
+        {
+            _highlightPointSets[(int)_type]._highlightPoints[i].ShowOrgans(false, true);
+            _highlightPointSets[(int)_type]._highlightPoints[i].SelectOrgans(false);
+        }
+
+        _highlightPointSets[(int)_type]._highlightPoints[0].ShowBody(false, true);
     }
 
     #region Event Listeners
@@ -163,7 +171,10 @@ public class TimeLine : MonoBehaviour
             for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
             {
                 _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = false;
+                _highlightPointSets[(int)_type]._highlightPoints[i].ShowOrgans(false, true);
             }
+
+            _highlightPointSets[(int)_type]._highlightPoints[0].ShowBody(true);
         }
 
         int displayValueIndex = 0;
@@ -188,12 +199,11 @@ public class TimeLine : MonoBehaviour
 
         SimulationManager._control.MakeCameraZoomOut();
 
-
         while (IsPlaying && _currentStep < _steps && !_modeEnding)
         {
             if (_currentHighlightPointIndex + 1 == _highlightPointSets[(int)_type]._highlightPoints.Length)
                 SetEndingMode();
-            
+
             if (_currentHighlightPointIndex >= _highlightPointSets[(int)_type]._highlightPoints.Length)
             {
                 break;
@@ -240,6 +250,8 @@ public class TimeLine : MonoBehaviour
         EventController.TriggerEvent(_modeEndingEvent);
         SimulationManager._control.ResetCamera();
 
+        _highlightPointSets[(int)_type]._highlightPoints[0].ShowBody(false);
+
         switch (_type)
         {
             case DiabetesTypes.Normal:
@@ -248,7 +260,7 @@ public class TimeLine : MonoBehaviour
                 break;
             case DiabetesTypes.T1DM:
                 _highlightPointSets[(int)_type].ToggleAll(true);
-               // _highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = false;
+                // _highlightPointSets[(int)_type]._highlightPoints[_highlightPointSets[(int)_type]._highlightPoints.Length - 1].IsSelected = false;
                 break;
 
             case DiabetesTypes.T2DM:
@@ -288,16 +300,22 @@ public class TimeLine : MonoBehaviour
         for (int i = 0; i < _highlightPointSets[(int)_type]._highlightPoints.Length; i++)
         {
             if (i != _currentHighlightPointIndex)
+            {
                 _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = false;
+                _highlightPointSets[(int)_type]._highlightPoints[i].ShowOrgans(false);
+                _highlightPointSets[(int)_type]._highlightPoints[i].SelectOrgans(false);
+            }
             else
             {
-                // _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = true;
                 yield return new WaitForSeconds(_settings._waitBeforeTransition);
                 yield return SimulationManager._control?.MakeTransition(i);
+                _highlightPointSets[(int)_type]._highlightPoints[i].ShowOrgans(true);
                 yield return new WaitForSeconds(_settings._waitAfterTransition);
                 yield return SimulationManager._control?.MakeCameraZoomIn();
                 yield return new WaitForSeconds(_settings._waitAfterZoomIn);
                 _highlightPointSets[(int)_type]._highlightPoints[i].IsSelected = true;
+                _highlightPointSets[(int)_type]._highlightPoints[i].SelectOrgans(true);
+
                 SimulationManager._control.SelectHP(i);
             }
         }
