@@ -648,6 +648,7 @@ MonoBehaviour:
   OnHideFinish:
     m_PersistentCalls:
       m_Calls: []
+  _canvasGroup: {fileID: 0}
 --- !u!1 &2646353102238641112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1029,7 @@ MonoBehaviour:
   OnHideFinish:
     m_PersistentCalls:
       m_Calls: []
+  _canvasGroup: {fileID: 3607203811954202809}
 --- !u!1 &3966656686255033448
 GameObject:
   m_ObjectHideFlags: 0

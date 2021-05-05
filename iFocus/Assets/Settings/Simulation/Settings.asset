@@ -15,9 +15,34 @@ MonoBehaviour:
   defaultIGValue: 5
   foodIGValues: 020000000400000006000000080000000a0000000c000000
   _waitAfterTransition: 0
-  _transitionSpeed: 1
+  _transitionSpeed: 0.5
   _defaultZoomValue: 40
   _zoomInValue: 16
+  _zoomInTime: 1
+  _zoomInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _rotationSpeedFactor: 0.15
   _rotationDeadPoint: 0.05
   _waitBeforeTransition: 0

@@ -12,13 +12,12 @@ public class CanvasGroupUtility : MonoBehaviour
     [SerializeField] private UnityEvent OnShowFinish = null;
     [SerializeField] private UnityEvent OnHideStart = null;
     [SerializeField] private UnityEvent OnHideFinish = null;
+    [SerializeField] private CanvasGroup _canvasGroup;
 
     private bool _isShowing;
-    private CanvasGroup _canvasGroup;
 
-    private void Awake()
+    private void Start()
     {
-        _canvasGroup = GetComponent<CanvasGroup>();
         _isShowing = _canvasGroup.alpha == 1 ? true : false;
     }
 
