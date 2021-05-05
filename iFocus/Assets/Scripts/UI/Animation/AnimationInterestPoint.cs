@@ -66,6 +66,7 @@ public class AnimationInterestPoint : Animation
     private void OnStateRunningEvent(StateRunningEvent eventData)
     {
         Hide();
+        ClosePanel();
     }
 
     #endregion
