@@ -161,6 +161,7 @@ MonoBehaviour:
   OnHideFinish:
     m_PersistentCalls:
       m_Calls: []
+  _canvasGroup: {fileID: 5583974691829100279}
 --- !u!114 &688782861125407603
 MonoBehaviour:
   m_ObjectHideFlags: 0

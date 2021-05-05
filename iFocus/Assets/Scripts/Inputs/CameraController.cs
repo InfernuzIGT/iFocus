@@ -21,9 +21,6 @@ public class CameraController : MonoBehaviour
     /// </summary>
     public CinemachineFreeLook CMCamera;
 
-    [SerializeField] private EasingFunction.Ease type;
-    private EasingFunction.Function function;
-
     [SerializeField] private SettingsSO _settings;
 
     /// <summary>
@@ -137,8 +134,6 @@ public class CameraController : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Transition(Vector3 newPosition, float transitionTime)
     {
-        function = EasingFunction.GetEasingFunction(type);
-
         Vector3 initialPosition = _target.position;
         float elapsedTime = 0;
 
@@ -149,10 +144,9 @@ public class CameraController : MonoBehaviour
 
         while (elapsedTime <= transitionTime)
         {
-            //_target.position = Vector3.Lerp(initialPosition, newTransform.position, elapsedTime / transitionTime);
-            xPosition = function(initialPosition.x, newPosition.x, elapsedTime / transitionTime);
-            yPosition = function(initialPosition.y, newPosition.y, elapsedTime / transitionTime);
-            zPosition = function(initialPosition.z, newPosition.z, elapsedTime / transitionTime);
+            xPosition = Mathf.Lerp(initialPosition.x, newPosition.x, _settings._transitionCurve.Evaluate( elapsedTime / transitionTime));
+            yPosition = Mathf.Lerp(initialPosition.y, newPosition.y, _settings._transitionCurve.Evaluate(elapsedTime / transitionTime));
+            zPosition = Mathf.Lerp(initialPosition.z, newPosition.z, _settings._transitionCurve.Evaluate(elapsedTime / transitionTime));
             _target.position = new Vector3(xPosition, yPosition, zPosition);
 
             elapsedTime += Time.deltaTime;
@@ -199,7 +193,7 @@ public class CameraController : MonoBehaviour
     {
         return StartCoroutine(ZoomCoroutine(zoomValue));
     }
-
+    
     /// <summary>
     /// Used for generic zooms executed by the CM camera.
     /// </summary>
@@ -207,12 +201,14 @@ public class CameraController : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ZoomCoroutine(float amountOfZoom)
     {
+        float elapsedTime = 0f;
         float _startingPoint = CMCamera.m_Lens.FieldOfView;
         _zoomFinalValue = amountOfZoom;
 
-        while (!(CMCamera.m_Lens.FieldOfView <= (_zoomFinalValue + 0.1f) && CMCamera.m_Lens.FieldOfView >= (_zoomFinalValue - 0.1f)))
+        while (elapsedTime <= _settings._zoomInTime)
         {
-            CMCamera.m_Lens.FieldOfView = Mathf.Lerp(CMCamera.m_Lens.FieldOfView, _zoomFinalValue, 0.02f);
+            CMCamera.m_Lens.FieldOfView = Mathf.Lerp(_startingPoint, _zoomFinalValue, _settings._zoomInCurve.Evaluate(elapsedTime / _settings._zoomInTime));
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
         CMCamera.m_Lens.FieldOfView = _zoomFinalValue;
