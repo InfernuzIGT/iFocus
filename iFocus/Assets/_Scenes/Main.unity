@@ -689,7 +689,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _raycaster
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1883695918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc89e15edc46746a010f70cf248edd, type: 3}
 --- !u!1001 &1792729584
@@ -1862,6 +1862,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093ba95170c6c4c46a88a091a661a959, type: 3}
+--- !u!114 &1883695918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 89777333340383283, guid: 093ba95170c6c4c46a88a091a661a959,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883695917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &544908982975443445
 PrefabInstance:
   m_ObjectHideFlags: 0
